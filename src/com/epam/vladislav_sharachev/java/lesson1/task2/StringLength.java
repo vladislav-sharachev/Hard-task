@@ -43,7 +43,7 @@ public class StringLength {
                     max = amount[i].length();
                     maxi = i;
                 }
-            System.out.println("Самая маленькая строка в массиве это " + amount[mini] + " Она состоит из " + min + " символа(ов)");
-            System.out.println("Самая большая строка в массиве это " + amount[maxi] + " Она состоит из " + max + " символа(ов)");
+            System.out.println("Самая маленькая строка " + amount[mini] + " Она состоит из " + min + " символа(ов)");
+            System.out.println("Самая большая строка " + amount[maxi] + " Она состоит из " + max + " символа(ов)");
     }
 }
