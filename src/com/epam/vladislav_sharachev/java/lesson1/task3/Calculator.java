@@ -27,7 +27,7 @@ public class Calculator {
             num = scanner.nextInt();
         } else {
             System.out.println("Введите только числовое значение.");
-            scanner.next();//рекурсия
+            scanner.next();
             num = getInt();
         }
         return num;
@@ -40,7 +40,7 @@ public class Calculator {
             operation = scanner.next().charAt(0);
         } else {
             System.out.println("Допустимые операции: + , - , * , / ");
-            scanner.next();//рекурсия
+            scanner.next();
             operation = getOperation();
         }
         return operation;
@@ -63,7 +63,7 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Допустимые операции: + , - , * , / ");
-                result = calc(num1, num2, getOperation());//рекурсия
+                result = calc(num1, num2, getOperation());
         }
         return result;
     }
