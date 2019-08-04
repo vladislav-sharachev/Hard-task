@@ -8,8 +8,9 @@ public class Carrot extends Vegetable {
 
     public Carrot (int calories, String title, int weight) {
         super(calories, title, weight);
-        this.weight = 200;
-        this.calories = 41;
+        this.setWeight(200);
+        this.setCalories(41);
+        this.setTitle("Морковь");
     }
 
     public void refrigerator() {

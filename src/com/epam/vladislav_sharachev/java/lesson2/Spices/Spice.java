@@ -1,37 +1,27 @@
 package com.epam.vladislav_sharachev.java.lesson2.Spices;
 
 public abstract class Spice {
-    public String title;
-    public int weight;
+    protected String title; //инкапсуляция
+    protected int calories;
 
-    public Spice(String title, int weight) {
+    public Spice(String title, int calories) {
         this.title = title;
-        this.weight = weight;
+        this.calories = calories;
     }
 
-    public void sprinkle() { //насыпать специю
-        System.out.println("Насыпать щепотку специй ");
+    public abstract void putSpice(); //полиморфизм
+
+    public void setTitle(String spiceTitle) { // this часто используется в сеттерах
+        this.title = spiceTitle;
     }
 
-    public abstract void putSpice(); //насыпать выбранную специю
 
-    public void setTitle(String title) { // this часто используется в сеттерах
-        this.title = title;
+    public void setCalories(int energy) {
+        this.calories = energy;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public int getCalories() {
+        return calories;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void getInfo() {
-        System.out.println(title + ", " + weight);
-    }
 }

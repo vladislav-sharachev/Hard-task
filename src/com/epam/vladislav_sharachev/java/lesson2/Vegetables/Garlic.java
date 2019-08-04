@@ -4,8 +4,9 @@ public class Garlic extends Vegetable implements Salad {
 
     public Garlic (int calories, String title, int weight) {
         super(calories, title, weight);
-        this.weight = 20;
-        this.calories = 149;
+        this.setWeight(20);
+        this.setCalories(149);
+        this.setTitle("Чеснок");
     }
 
     public void refrigerator() {

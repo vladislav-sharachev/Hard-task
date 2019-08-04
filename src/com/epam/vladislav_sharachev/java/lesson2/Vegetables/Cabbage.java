@@ -4,13 +4,14 @@ public class Cabbage extends Vegetable {
 
     public Cabbage(int calories, String title, int weight) {
         super(calories, title, weight);
-        this.weight = 500;
-        this.calories = 27;
+        this.setWeight(500);
+        this.setCalories(27);
+        this.setTitle("Капуста");
     }
 
     @Override
     public void refrigerator() {
-        System.out.println("Морковь лежит в холодильнике");
+        System.out.println("Капуста лежит в холодильнике");
     }
 
     public void soup() {

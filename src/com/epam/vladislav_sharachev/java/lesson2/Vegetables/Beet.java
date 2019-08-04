@@ -8,8 +8,9 @@ public class Beet extends Vegetable implements Salad {
 
     public Beet(int calories, String title, int weight) {
         super(calories, title, weight);
-        this.weight = 500;
-        this.calories = 43;
+        this.setWeight(500);
+        this.setCalories(43);
+        this.setTitle("Свекла");
     }
 
     public void refrigerator() {
@@ -18,6 +19,5 @@ public class Beet extends Vegetable implements Salad {
     public void soup() {
         System.out.println("Добавить нарезанную свеклу в суп");
     }
-
 
 }
