@@ -1,4 +1,4 @@
-package com.epam.vladislav_sharachev.java.lesson2; // Влад Шарачев 3 вариант (Шеф-повар)
+package com.epam.vladislav_sharachev.java.lesson2; // Влад Шарачев 2 вариант (Шеф-повар)
 
 import com.epam.vladislav_sharachev.java.lesson2.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson2.Spices.*;
@@ -6,7 +6,12 @@ import com.epam.vladislav_sharachev.java.lesson2.Spices.*;
 import java.util.*;
 import java.util.Scanner;
 
-public class Main {
+public class ToCook {
+    public static void main(String[] args) {
+
+        ToCook app = new ToCook();
+        app.startToCookForMe();
+    }
 
     static Scanner searchScanner = new Scanner(System.in); //ввод значений диапазона (getSearch)
 
@@ -37,7 +42,8 @@ public class Main {
         toSalad.salad();
     }
     static Scanner choiceScanner = new Scanner(System.in);
-    public static void main(String[] args) {
+
+        public void startToCookForMe() {
 
         Vegetable[] vegetables = new Vegetable[6];
         for (int i = 0; i<vegetables.length; i++) {
