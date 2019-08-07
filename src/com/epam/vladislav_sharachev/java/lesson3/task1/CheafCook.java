@@ -23,7 +23,7 @@ public class CheafCook {
             System.out.println(foods[i].getCalories() + " ккал - " + foods[i].getTitle());
             if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
-            try {
+            try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
 
             } finally {
@@ -42,7 +42,7 @@ public class CheafCook {
         for (int i = 0; i < foods.length; ++i) {
             if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
-            try {
+            try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
 
             } finally {
@@ -60,14 +60,14 @@ public class CheafCook {
                 System.out.println(+i + " " + foods[i].getTitle() + " - "
                         + foods[i].getCalories() + " ккал.");
         }
-        if (searchMin < 0 || searchMax < 0)
+        if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
             throw new MySearchExcaption("Каллории не могут быть отрицательными");
         try {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
         }
-        if (searchMin > searchMax)
+        if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
             throw new MySearchExcaption("Нижний дипапазон должен быть меньше верхнего");
         try {
         } catch (Exception e) {
@@ -125,7 +125,7 @@ public class CheafCook {
 
     }
 
-    public void getFile() throws FileNotFoundException {
+    public void getFile() throws FileNotFoundException { //поиск файла рецепта + исключение
         File file = new File("Recepts");
         try {
             Scanner scanner = new Scanner(file);
