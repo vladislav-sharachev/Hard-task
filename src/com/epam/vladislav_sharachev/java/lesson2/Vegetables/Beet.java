@@ -1,10 +1,9 @@
 package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
 
-public class Beet extends Vegetable implements Salad {
+import com.epam.vladislav_sharachev.java.lesson2.Product;
 
-    public void salad() {
-        System.out.println("Добавить свеклу в салат");
-    }
+public class Beet extends Product implements Salad, Fridge {
+
 
     public Beet(int calories, String title, int weight) {
         super(calories, title, weight);
@@ -13,9 +12,14 @@ public class Beet extends Vegetable implements Salad {
         this.setTitle("Свекла");
     }
 
-    public void refrigerator() {
+    public void fridge() {
         System.out.println("Свекла лежит в холодильнике");
     }
+
+    public void salad() {
+        System.out.println("Добавить свеклу в салат");
+    }
+
     public void soup() {
         System.out.println("Добавить нарезанную свеклу в суп");
     }

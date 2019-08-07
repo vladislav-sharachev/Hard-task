@@ -1,19 +1,17 @@
-package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
+package com.epam.vladislav_sharachev.java.lesson2;
 
-public abstract class Vegetable implements Comparable { //использование интерфеса Comparable
+public abstract class Product implements Comparable { //использование интерфеса Comparable
     protected int weight; // инкапсуляция
     protected int calories;
     protected String title;
 
 
-    public Vegetable(int calories, String title, int weight) {
+    public Product(int calories, String title, int weight) {
         this.calories = calories; //ключевое слово this
         this.title = title;
         this.weight = weight;
     }
 
-
-    public abstract void refrigerator();
 
     public abstract void soup();
 
@@ -39,7 +37,7 @@ public abstract class Vegetable implements Comparable { //использован
     }
 
     public int compareTo(Object obj) { //использование интерфеса
-        Vegetable tmp = (Vegetable) obj;
+        Product tmp = (Product) obj;
         if (this.calories < tmp.calories) {
             return -1;
         } else if (this.calories > tmp.calories) {
