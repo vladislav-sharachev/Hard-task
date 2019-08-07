@@ -32,7 +32,7 @@ public class CheafCook {
 
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
-            sum = sum + foods[i].calories;
+            sum = sum + foods[i].getCalories();
         }
         System.out.println("Общая каллорийность продуктов: " + sum + " ккал");
     }

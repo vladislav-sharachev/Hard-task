@@ -18,9 +18,4 @@ public class Pepper extends Product implements PutSpice { //приемствен
         System.out.println("Насыпать щепотку перца");
     }
 
-    public void setTitle(String sTitle) { // this часто используется в сеттерах
-        this.title = sTitle;
-    }
-
-
 }

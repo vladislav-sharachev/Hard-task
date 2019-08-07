@@ -2,8 +2,8 @@ package com.epam.vladislav_sharachev.java.lesson2;
 
 public abstract class Product implements Comparable { //использование интерфеса Comparable
     protected int weight; // инкапсуляция
-    protected int calories;
-    protected String title;
+    private int calories;
+    private String title;
 
 
     public Product(int calories, String title, int weight) {
