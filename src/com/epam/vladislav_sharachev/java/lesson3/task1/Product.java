@@ -5,16 +5,13 @@ public abstract class Product implements Comparable { //использовани
     private int calories;
     private String title;
 
-
     public Product(int calories, String title, int weight) {
         this.calories = calories; //ключевое слово this
         this.title = title;
         this.weight = weight;
     }
 
-
     public abstract void soup();
-
 
     public void setTitle(String itemTitle) { // this ключевое слово для для title
         this.title = itemTitle;
