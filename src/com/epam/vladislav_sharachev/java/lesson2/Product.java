@@ -16,7 +16,7 @@ public abstract class Product implements Comparable { //использовани
     public abstract void soup();
 
 
-    public void setTitle(String itemTitle) { // this часто используется в сеттерах
+    public void setTitle(String itemTitle) { // this ключевое слово для для title
         this.title = itemTitle;
     }
 
@@ -24,7 +24,7 @@ public abstract class Product implements Comparable { //использовани
         return title;
     }
 
-    public void setCalories(int itemCalories) { // this часто используется в сеттерах
+    public void setCalories(int itemCalories) { // this ключевое слово для calories
         this.calories = itemCalories;
     }
 
