@@ -2,7 +2,7 @@ package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
 
 import com.epam.vladislav_sharachev.java.lesson2.Product;
 
-public class Garlic extends Product implements Salad, Fridge {
+public class Garlic extends Product implements Salad {
 
     public Garlic(int calories, String title, int weight) {
         super(calories, title, weight);
@@ -16,9 +16,6 @@ public class Garlic extends Product implements Salad, Fridge {
         System.out.println("Добавить нарезанный чеснок в суп");
     }
 
-    public void fridge() {
-        System.out.println("Чеснок лежит в холодильнике");
-    }
 
     public void salad() {
         System.out.println("Добавить чеснок в салат");

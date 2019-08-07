@@ -2,7 +2,7 @@ package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
 
 import com.epam.vladislav_sharachev.java.lesson2.Product;
 
-public class Carrot extends Product implements Fridge {
+public class Carrot extends Product {
 
     public void soup() {
         System.out.println("Добавить нарезанную морковь в суп");
@@ -15,7 +15,5 @@ public class Carrot extends Product implements Fridge {
         this.setTitle("Морковь");
     }
 
-    public void fridge() {
-        System.out.println("Морковь лежит в холодильнике");
-    }
+
 }

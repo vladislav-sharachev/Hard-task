@@ -2,7 +2,7 @@ package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
 
 import com.epam.vladislav_sharachev.java.lesson2.Product;
 
-public class Potato extends Product implements Fridge {
+public class Potato extends Product  {
 
     public Potato(int calories, String title, int weight) {
         super(calories, title, weight);
@@ -15,9 +15,5 @@ public class Potato extends Product implements Fridge {
         System.out.println("Добавить нарезанный картофель в суп");
     }
 
-    @Override
-    public void fridge() {
-        System.out.println("Картофель лежит в холодильнике");
 
-    }
 }

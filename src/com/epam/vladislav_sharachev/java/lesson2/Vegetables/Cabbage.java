@@ -2,7 +2,7 @@ package com.epam.vladislav_sharachev.java.lesson2.Vegetables;
 
 import com.epam.vladislav_sharachev.java.lesson2.Product;
 
-public class Cabbage extends Product implements Fridge {
+public class Cabbage extends Product  {
 
     public Cabbage(int calories, String title, int weight) {
         super(calories, title, weight);
@@ -11,10 +11,7 @@ public class Cabbage extends Product implements Fridge {
         this.setTitle("Капуста");
     }
 
-    @Override
-    public void fridge() {
-        System.out.println("Капуста лежит в холодильнике");
-    }
+
 
     public void soup() {
         System.out.println("Добавить нарезанную капусту в суп");
