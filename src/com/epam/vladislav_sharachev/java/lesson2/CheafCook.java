@@ -1,8 +1,10 @@
 package com.epam.vladislav_sharachev.java.lesson2;
 
+import com.epam.vladislav_sharachev.java.lesson2.Spices.PutSpice;
+import com.epam.vladislav_sharachev.java.lesson2.Vegetables.Salad;
+
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
 
 public class CheafCook {
     Product[] foods;
@@ -11,7 +13,8 @@ public class CheafCook {
         this.foods = foods;
     }
 
-    public void getSorting() {
+
+    public void getSorting() { //сортировка
 
         Arrays.sort(foods);
         for (int i = 0; i < foods.length; i++) {
@@ -19,28 +22,13 @@ public class CheafCook {
         }
     }
 
-    public void getMyEat() {
+    public void getMyEat() { //еда в холодильнике
         for (int i = 0; i < foods.length; i++) {
             System.out.println(foods[i].getTitle());
         }
     }
 
-    public void getMyCook() {
-        for (int i = 0; i < foods.length; i++) {
-            System.out.println(foods[i].getTitle());
-        }
-        System.out.println("Что вы хотите выбрать?");
-
-        String myChoice1 = new String();
-        for (int i = 0; i < foods.length; i++) {
-            if (myChoice1 == foods[0].getTitle());
-
-        }
-
-    }
-
-
-    public void getSum() {
+    public void getSum() { //сумма каллорий в пище
 
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
@@ -50,7 +38,7 @@ public class CheafCook {
     }
 
 
-    public void getFind() {
+    public void getFind() { //поиск по диапазону по каллорий
 
         while (true) {
 
@@ -80,7 +68,7 @@ public class CheafCook {
 
     Scanner searchScanner = new Scanner(System.in);
 
-    public int getSort() {
+    public int getSort() { //ввод для поиска по диапазону
 
         System.out.println("Введите диапазон");
 
@@ -105,5 +93,39 @@ public class CheafCook {
     }
 
 
-}
+    public void getQuest() { //меню цикла
+        System.out.println("[1] - что в холодильнике " +
+                "[2] - приготовить салат " +
+                "[3] - приготовить суп " +
+                "[4] - каллорийность продуктов в супе " +
+                "[5] - сортировать овощи для салата по каллорийности " +
+                "[6] - найти по диапазону каллорийности " +
+                "[0] - выйти из игры");
+    }
 
+    public void outputSaladInfo(Salad toSalad) { //добавить овощи в салат
+        toSalad.salad();
+    }
+
+    public void outputPutSpiceInfo(PutSpice toPutSpice) { //добавить специи в суп/салат
+
+        toPutSpice.putSpice();
+    }
+
+    public void soupIsReady() { //сообщение о готовности
+        System.out.println("Суп готов");
+    }
+
+    public void saladIsReady() { //сообщение о готовности
+        System.out.println("Салат готов");
+    }
+
+    public void soupCook() { // добавить овощи в суп
+        for (Product product : foods) {
+            product.soup();
+        }
+
+
+    }
+
+}

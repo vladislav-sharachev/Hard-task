@@ -36,11 +36,11 @@ public abstract class Product implements Comparable { //использовани
         this.weight = itemWeight;
     }
 
-    public int compareTo(Object obj) { //использование интерфеса
-        Product tmp = (Product) obj;
-        if (this.calories < tmp.calories) {
+    public int compareTo(Object obj) { //использование интерфеса для реализации сортировки
+        Product mySort = (Product) obj;
+        if (this.calories < mySort.calories) {
             return -1;
-        } else if (this.calories > tmp.calories) {
+        } else if (this.calories > mySort.calories) {
             return 1;
         }
         return 0;
