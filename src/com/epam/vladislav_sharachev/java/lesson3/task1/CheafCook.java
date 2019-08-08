@@ -21,7 +21,7 @@ public class CheafCook {
         Arrays.sort(foods);
         for (int i = 0; i < foods.length; i++) {
             System.out.println(foods[i].getCalories() + " ккал - " + foods[i].getTitle());
-            if (foods[i].getCalories() < 0)                 throw new MySortExcaption("Имеется продукт с отрицательным" +
+            if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
             try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
@@ -42,7 +42,7 @@ public class CheafCook {
     public void getSum() throws MySortExcaption { //сумма каллорий в пище
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
-            if (foods[i].getCalories() < 0)                 throw new MySortExcaption("Имеется продукт с отрицательным" +
+            if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
             try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
