@@ -21,10 +21,12 @@ public class CheafCook {
         Arrays.sort(foods);
         for (int i = 0; i < foods.length; i++) {
             System.out.println(foods[i].getCalories() + " ккал - " + foods[i].getTitle());
-            if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
+            if (foods[i].getCalories() < 0)                 throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
             try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
+                e.printStackTrace();
+
 
             } finally {
             }
@@ -40,10 +42,11 @@ public class CheafCook {
     public void getSum() throws MySortExcaption { //сумма каллорий в пище
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
-            if (foods[i].getCalories() < 0) throw new MySortExcaption("Имеется продукт с отрицательным" +
+            if (foods[i].getCalories() < 0)                 throw new MySortExcaption("Имеется продукт с отрицательным" +
                     " показателем каллорийности");
             try { //исключение при обращении к продукту с отрицательными каллориями
             } catch (Exception e) {
+                e.printStackTrace();
 
             } finally {
             }
@@ -60,20 +63,28 @@ public class CheafCook {
                 System.out.println(+i + " " + foods[i].getTitle() + " - "
                         + foods[i].getCalories() + " ккал.");
         }
-        if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
-            throw new MySearchExcaption("Каллории не могут быть отрицательными");
-        try {
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
+        if (searchMin < 0 || searchMax < 0) {
+            try {
+                if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
+                    throw new MySearchExcaption("Каллории не могут быть отрицательными");
+                getSortExp(getSort());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+
+            }
         }
-        if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
-            throw new MySearchExcaption("Нижний дипапазон должен быть меньше верхнего");
-        try {
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Поиск окончен. Хотите завершить работу программы?");
+        if (searchMin > searchMax) {
+            try {
+                if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
+                    throw new MySearchExcaption("Нижний дипапазон должен быть меньше верхнего");
+                getSortExp(getSort());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                System.out.println("Поиск окончен. Хотите завершить работу программы?");
+            }
         }
     }
 
@@ -135,4 +146,9 @@ public class CheafCook {
             System.out.println("Еду еще нужно приготовить");
         }
     }
+
+    public void getSortExp(int getCalories) throws MySearchExcaption {
+        if (getCalories < 0)
+            throw new MySearchExcaption("Калории должны быть положительными");
     }
+}
