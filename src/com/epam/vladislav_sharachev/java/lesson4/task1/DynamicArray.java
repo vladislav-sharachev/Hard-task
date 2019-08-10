@@ -8,6 +8,7 @@ public class DynamicArray {
     public Object[] data;
     public int size = 0;
 
+
     public int size() { //размер массива
         return size;
     }

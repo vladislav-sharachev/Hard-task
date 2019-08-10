@@ -1,21 +1,22 @@
-package com.epam.vladislav_sharachev.java.lesson4.task2;
+package com.epam.vladislav_sharachev.java.lesson4.task2.tryA;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.lang.Integer;
 
 public class DynamicArray<E> {
 
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> myMillion = new ArrayList(Arrays.asList()); //создаем массив с 1 000 000 пустых строк
-        for (int i = 0; i < 10; i++) {
-            boolean add = myMillion.add(i);//добавляем числа в массив
-            System.out.print("[" + i + "] "); // вывести на экран последовательность чисел
-        }
+        ArrayList<Integer> myMillion = new ArrayList(); //создаем массив с 1 000 000 пустых строк
+
+        TryNow tryNow = new TryNow(myMillion);
+        tryNow.add();
         System.out.println();
+        System.out.println();
+        tryNow.notWas();
         System.out.println();
 
 
