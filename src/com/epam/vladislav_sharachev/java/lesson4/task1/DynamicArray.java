@@ -40,17 +40,17 @@ public class DynamicArray {
     }
 
     public static void main(String[] args) {
-        DynamicArray vector = new DynamicArray(8); //возможность задать начальный размер
-        vector.add(0); //возможность добавления элемента в массив
-        vector.add(1);
-        vector.add(2);
-        vector.add(3);
-        vector.add(4);
-        vector.add(5);
-        vector.add(6);
-        System.out.println("Num " + vector.get(4)); //получение элемента по индексу
-        vector.remove(4);
-        System.out.println("Num " + vector.get(4));
-        System.out.println(vector.toString());
+        DynamicArray changeArray = new DynamicArray(8); //возможность задать начальный размер
+        changeArray.add(0); //возможность добавления элемента в массив
+        changeArray.add(1);
+        changeArray.add(2);
+        changeArray.add(3);
+        changeArray.add(4);
+        changeArray.add(5);
+        changeArray.add(6);
+        System.out.println("Num " + changeArray.get(4)); //получение элемента по индексу
+        changeArray.remove(4);
+        System.out.println("Num " + changeArray.get(4));
+        System.out.println(changeArray.toString());
     }
 }

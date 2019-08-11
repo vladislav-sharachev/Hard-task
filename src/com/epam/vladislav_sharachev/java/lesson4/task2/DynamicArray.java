@@ -8,14 +8,14 @@ public class DynamicArray<E> {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> myMillion = new ArrayList(); //создаем массив
-        ArrayMethods letsGo = new ArrayMethods(myMillion); //ссылка на конструктор с методами
+        ArrayList<Integer> newMillion = new ArrayList(); //создаем массив
+        ArrayMethods changeMillion = new ArrayMethods(newMillion); //ссылка на конструктор с методами
 
-        letsGo.Add(); // добавить числа в массив
-        letsGo.Mix(); //перемешать и показать что числа перемешаны (первые 10 элементов)
-        letsGo.Unique(); //создание 2-го массива для сравнения с 1-м (проверка уникальности)
-        letsGo.Min(); //вывести на экран минимальный элемент массива
-        letsGo.Parity(); //удалить все нечетные числа
-        letsGo.Penult();// отсортировать массив и показать предпоследний по величине элемент
+        changeMillion.Add(); // добавить числа в массив
+        changeMillion.Mix(); //перемешать и показать что числа перемешаны (первые 10 элементов)
+        changeMillion.Unique(); //создание 2-го массива для сравнения с 1-м (проверка уникальности)
+        changeMillion.Min(); //вывести на экран минимальный элемент массива
+        changeMillion.Parity(); //удалить все нечетные числа
+        changeMillion.Penult();// отсортировать массив и показать предпоследний по величине элемент
     }
 }
