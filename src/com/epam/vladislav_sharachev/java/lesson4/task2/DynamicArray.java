@@ -9,13 +9,13 @@ public class DynamicArray<E> {
     public static void main(String[] args) {
 
         ArrayList<Integer> myMillion = new ArrayList(); //создаем массив
-        ArrayMethods tryNow = new ArrayMethods(myMillion); //ссылка на конструктор с методами
+        ArrayMethods letsGo = new ArrayMethods(myMillion); //ссылка на конструктор с методами
 
-        tryNow.getAdd(); // добавить числа в массив
-        tryNow.getMix(); //перемешать и показать что числа перемешаны (первые 10 элементов)
-        tryNow.getUnique(); //создание 2-го массива для сравнения с 1-м (проверка уникальности)
-        tryNow.getMin(); //вывести на экран минимальный элемент массива
-        tryNow.getParity(); //удалить все нечетные числа
-        tryNow.getPenult();// отсортировать массив и показать предпоследний по величине элемент
+        letsGo.Add(); // добавить числа в массив
+        letsGo.Mix(); //перемешать и показать что числа перемешаны (первые 10 элементов)
+        letsGo.Unique(); //создание 2-го массива для сравнения с 1-м (проверка уникальности)
+        letsGo.Min(); //вывести на экран минимальный элемент массива
+        letsGo.Parity(); //удалить все нечетные числа
+        letsGo.Penult();// отсортировать массив и показать предпоследний по величине элемент
     }
 }

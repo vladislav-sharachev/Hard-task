@@ -7,47 +7,47 @@ import java.util.Comparator;
 
 public class ArrayMethods<Integer> {
 
-    public final ArrayList<java.lang.Integer> one;
+    public final ArrayList<java.lang.Integer> number;
 
-    public ArrayMethods(ArrayList<java.lang.Integer> one) {
-        this.one = one;
+    public ArrayMethods(ArrayList<java.lang.Integer> number) {
+        this.number = number;
     }
 
-    public void getAdd() {
-        for (int i = 0; i < 1000000; i++) {
-            boolean add = one.add(i);//добавляем числа в массив
+    public void Add() {
+        for (int i = 1; i < 1000001; i++) {
+            boolean add = number.add(i);//добавляем числа в массив
         }
     }
 
-    public void getMix() {
-        Collections.shuffle(one); //перемешиваем числа в массиве
+    public void Mix() {
+        Collections.shuffle(number); //перемешиваем числа в массиве
         System.out.print("Первые 10 чисел: ");
-        for (int i = 0; i < 10; i++) {
-            System.out.print("[" + one.get(i) + "] "); //вывести на экран массив 10 первых чисел
+        for (int i = 1; i < 11; i++) {
+            System.out.print("[" + number.get(i) + "] "); //вывести на экран массив 10 первых чисел
         }
         System.out.println();
     }
 
-    public void getUnique() {
-        ArrayList<java.lang.Integer> myMilli = new ArrayList(Arrays.asList(one));
+    public void Unique() {
+        ArrayList<java.lang.Integer> myMilli = new ArrayList(Arrays.asList(number));
         /* создаем отдельный список
          для проверки уникальности каждого элемента массива */
-        System.out.print("Элементы уникальны: " + Collections.disjoint(myMilli, one)); //вывести на экран подтверждение уникальности
+        System.out.print("Элементы уникальны: " + Collections.disjoint(myMilli, number)); //вывести на экран подтверждение уникальности
         System.out.println();
     }
 
-    public void getMin() {
-        System.out.print("Минимальный элемент: " + Collections.min(one)); //вывести на экран минимальный элемент массива
+    public void Min() {
+        System.out.print("Минимальный элемент: " + Collections.min(number)); //вывести на экран минимальный элемент массива
         System.out.println();
 
     }
 
-    public void getParity() {
-        one.removeIf(i -> i % 2 != 0); //удалить все нечетные числа
+    public void Parity() {
+        number.removeIf(i -> i % 2 != 0); //удалить все нечетные числа
     }
 
-    public void getPenult() {
-        Collections.sort(one); // отсортировать массив
-        System.out.println("Предпослдений по величине элемент: " + one.get(1)); //вывести на экран предпоследний элемент
+    public void Penult() {
+        Collections.sort(number); // отсортировать массив
+        System.out.println("Предпоследний по величине четный элемент: " + number.get(1)); //вывести на экран предпоследний элемент
     }
 }
