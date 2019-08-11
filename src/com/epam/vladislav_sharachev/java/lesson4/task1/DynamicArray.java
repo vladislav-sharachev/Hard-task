@@ -4,9 +4,11 @@ public class DynamicArray {
     public DynamicArray(int myValue) { //конструктор
         this.myArray = new Object[myValue];
     }
+
     public Object[] myArray;
 
     public int elements = 0; //количество элементов
+
     void add(Object elementToAdd) { //возможность добавления элементов в массив
         if (myArray.length <= elements) { //если длинна массива меньше содержащихся в нем элементов
             Object[] tempArray = myArray; //создаем 2-й массив
@@ -19,7 +21,7 @@ public class DynamicArray {
         elements++; //добавляет +1 ячейку к размеру массива
     }
 
-    void remove(int elementToRemove) { //возможность даления элементов из массива
+    void remove(int elementToRemove) { //возможность удаления элементов из массива
         Object[] tempArray = myArray; //равняем старый массив с новым
         for (int i = 0; i < myArray.length; i++) {
             if (i < elementToRemove) {
