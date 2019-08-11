@@ -7,7 +7,7 @@ public class Tomato extends Product {
     public Tomato(int calories, String title, int weight) {
         super(calories, title, weight);
         this.setWeight(200);
-        this.setCalories(-1);
+        this.setCalories(0);
         this.setTitle("Помидор");
 
     }
