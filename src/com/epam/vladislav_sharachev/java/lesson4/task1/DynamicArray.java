@@ -1,21 +1,19 @@
 package com.epam.vladislav_sharachev.java.lesson4.task1;
 
 public class DynamicArray {
-
     public DynamicArray(int myValue) { //конструктор
         this.data = new Object[myValue];
     }
+
     public Object[] data;
     public int size = 0;
-
 
     public int size() { //размер массива
         return size;
     }
 
-
-     void add(Object indexToAdd) { //возможность добавления элементов в массив
-        if(data.length <= size) { //если длинна массива меньше содержащихся в нем элементов
+    void add(Object indexToAdd) { //возможность добавления элементов в массив
+        if (data.length <= size) { //если длинна массива меньше содержащихся в нем элементов
             Object[] tmp = data;
             data = new String[size];
             for (int i = 0; i < tmp.length; i++) {
@@ -37,14 +35,12 @@ public class DynamicArray {
         }
     }
 
-
-        public Object get(int size) { //получение элемента по индексу
+    public Object get(int size) { //получение элемента по индексу
         return data[size];
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "(" + data.length + ")";
     }
 
@@ -61,6 +57,5 @@ public class DynamicArray {
         vector.remove(4);
         System.out.println("Num " + vector.get(4));
         System.out.println(vector.toString());
-
     }
 }
