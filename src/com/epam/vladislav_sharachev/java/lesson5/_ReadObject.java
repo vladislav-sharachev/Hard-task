@@ -23,7 +23,7 @@ public class _ReadObject {
             Product product3 = (Product) ois.readObject();
             Product product4 = (Product) ois.readObject();
 
-            System.out.println("Следующие наименования скопроованы в файл: ");
+            System.out.println("Следующие наименования скопированы в файл: ");
             System.out.println(product.title);
             System.out.println(product1.title);
             System.out.println(product2.title);
