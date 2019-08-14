@@ -1,6 +1,6 @@
-package com.epam.vladislav_sharachev.java.lesson5.Vegetables;
+package com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables;
 
-import com.epam.vladislav_sharachev.java.lesson5.Product;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Product;
 
 public class Beet extends Product implements Salad {
 

@@ -1,4 +1,4 @@
-package com.epam.vladislav_sharachev.java.lesson5;
+package com.epam.vladislav_sharachev.java.lesson5.task1;
 
 import java.io.Serializable;
 

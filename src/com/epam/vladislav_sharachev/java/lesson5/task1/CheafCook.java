@@ -1,15 +1,9 @@
-package com.epam.vladislav_sharachev.java.lesson5;
+package com.epam.vladislav_sharachev.java.lesson5.task1;
 
-import com.epam.vladislav_sharachev.java.lesson5.Spices.PutSpice;
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.Salad;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Spices.PutSpice;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.Salad;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
-import java.nio.channels.FileChannel;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Scanner;
 

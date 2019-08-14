@@ -1,15 +1,9 @@
-package com.epam.vladislav_sharachev.java.lesson5; // Влад Шарачев 2 вариант (Шеф-повар)
+package com.epam.vladislav_sharachev.java.lesson5.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.*;
-import com.epam.vladislav_sharachev.java.lesson5.Spices.*;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.*;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Spices.*;
 
-import javax.xml.stream.Location;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.CharBuffer;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class ToCook {

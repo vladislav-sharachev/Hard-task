@@ -1,6 +1,6 @@
-package com.epam.vladislav_sharachev.java.lesson5.Spices;
+package com.epam.vladislav_sharachev.java.lesson5.task1.Spices;
 
-import com.epam.vladislav_sharachev.java.lesson5.Product;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Product;
 
 public class Pepper extends Product implements PutSpice { //приемственность
     public Pepper(int calories, String title, int weight) {

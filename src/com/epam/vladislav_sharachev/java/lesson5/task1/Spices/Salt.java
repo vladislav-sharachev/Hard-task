@@ -1,6 +1,6 @@
-package com.epam.vladislav_sharachev.java.lesson5.Spices;
+package com.epam.vladislav_sharachev.java.lesson5.task1.Spices;
 
-import com.epam.vladislav_sharachev.java.lesson5.Product;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Product;
 
 public class Salt extends Product implements PutSpice {
     public Salt(int calories, String title, int weight) {

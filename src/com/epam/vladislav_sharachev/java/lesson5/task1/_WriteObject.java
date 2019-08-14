@@ -1,9 +1,7 @@
-package com.epam.vladislav_sharachev.java.lesson5;
+package com.epam.vladislav_sharachev.java.lesson5.task1;
 
-import com.epam.vladislav_sharachev.java.lesson5.Product;
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.*;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.*;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;

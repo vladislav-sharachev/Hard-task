@@ -1,15 +1,13 @@
-package com.epam.vladislav_sharachev.java.lesson5;
+package com.epam.vladislav_sharachev.java.lesson5.task1;
 
-import com.epam.vladislav_sharachev.java.lesson5.Product;
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.Garlic;
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.Potato;
-import com.epam.vladislav_sharachev.java.lesson5.Vegetables.Tomato;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.Garlic;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.Potato;
+import com.epam.vladislav_sharachev.java.lesson5.task1.Vegetables.Tomato;
 
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.nio.*;
 
 public class _ReadObject {
     public static void main(String[] args) {
