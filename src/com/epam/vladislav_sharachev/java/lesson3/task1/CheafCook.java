@@ -1,9 +1,9 @@
 package com.epam.vladislav_sharachev.java.lesson3.task1;
 
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.MySearchExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.MySumExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.MySortMinusExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.MySortZeroExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.InvalidSearchValueExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.NegativeSumIndicatorExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.NegativeSortingIndicatorExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.ZeroSortingIndicatorExcaption;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Spices.PutSpice;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Vegetables.Salad;
 
@@ -26,13 +26,13 @@ public class CheafCook {
 
             try { //исключение при обращении к продукту с отрицательными каллориями
                 if (foods[i].getCalories() < 0) {
-                    throw new MySortMinusExcaption("Имеется продукт с отрицательным" +
+                    throw new NegativeSortingIndicatorExcaption("Имеется продукт с отрицательным" +
                             " показателем каллорийности");
                 } else if (foods[i].getCalories() == 0) {
-                    throw new MySortZeroExcaption("Имеется продукт с нулевым" +
+                    throw new ZeroSortingIndicatorExcaption("Имеется продукт с нулевым" +
                             " показателем каллорийности");
                 }
-            } catch (MySortMinusExcaption | MySortZeroExcaption e) {
+            } catch (NegativeSortingIndicatorExcaption | ZeroSortingIndicatorExcaption e) {
                 e.printStackTrace();
             }
         }
@@ -48,10 +48,10 @@ public class CheafCook {
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
             try {
-                if (foods[i].getCalories() < 0) throw new MySumExcaption("Имеется продукт с отрицательным" +
+                if (foods[i].getCalories() < 0) throw new NegativeSumIndicatorExcaption("Имеется продукт с отрицательным" +
                         " показателем каллорийности");
                 //исключение при обращении к продукту с отрицательными каллориями
-            } catch (MySumExcaption e) {
+            } catch (NegativeSumIndicatorExcaption e) {
                 e.printStackTrace();
 
             }
@@ -70,15 +70,15 @@ public class CheafCook {
         }
         try {
             if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
-                throw new MySearchExcaption("Каллории не могут быть отрицательными");
+                throw new InvalidSearchValueExcaption("Каллории не могут быть отрицательными");
 
-        } catch (MySearchExcaption e) {
+        } catch (InvalidSearchValueExcaption e) {
             e.printStackTrace();
         }
         try {
             if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
-                throw new MySearchExcaption("Нижний дипапазон должен быть меньше верхнего");
-        } catch (MySearchExcaption e) {
+                throw new InvalidSearchValueExcaption("Нижний дипапазон должен быть меньше верхнего");
+        } catch (InvalidSearchValueExcaption e) {
             e.printStackTrace();
         } finally {
             System.out.println("Хотите продолжить?");
