@@ -1,8 +1,10 @@
 package com.epam.vladislav_sharachev.java.lesson5;
 
-public abstract class Product implements Comparable { //использование интерфеса Comparable
-    protected int weight; // инкапсуляция
-    protected int calories;
+import java.io.Serializable;
+
+public abstract class Product implements Comparable, Serializable { //использование интерфеса Comparable
+    protected transient int weight; // инкапсуляция
+    protected transient int calories;
     protected String title;
 
 
@@ -11,6 +13,7 @@ public abstract class Product implements Comparable { //использовани
         this.title = title;
         this.weight = weight;
     }
+
 
 
     public abstract void soup();

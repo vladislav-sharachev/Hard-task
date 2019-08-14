@@ -5,6 +5,7 @@ import com.epam.vladislav_sharachev.java.lesson5.Vegetables.Salad;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,6 +27,13 @@ public class CheafCook {
         for (int i = 0; i < foods.length; i++) {
             System.out.println(foods[i].getCalories() + " ккал - " + foods[i].getTitle());
         }
+    }
+
+
+    public void Serials() {
+        int i = 0;
+        CharBuffer buffer = CharBuffer.wrap(foods[i].getTitle());
+
     }
 
     public void getMyEat() { //еда в холодильнике

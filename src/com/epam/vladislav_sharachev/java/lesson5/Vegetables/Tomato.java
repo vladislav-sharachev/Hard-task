@@ -25,4 +25,13 @@ public class Tomato extends Product implements Serializable {
     public String setTitle() {
         return null;
     }
+
+    public void setTitle(String itemTitle) { // this ключевое слово для для title
+        this.title = itemTitle;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
 }

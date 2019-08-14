@@ -2,10 +2,18 @@ package com.epam.vladislav_sharachev.java.lesson5; // Влад Шарачев 2 
 
 import com.epam.vladislav_sharachev.java.lesson5.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson5.Spices.*;
+
+import javax.xml.stream.Location;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.CharBuffer;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class ToCook {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         ToCook app = new ToCook();
         app.startToCookForMe();
@@ -30,6 +38,20 @@ public class ToCook {
 
         PutSpice pepperToPut = new Pepper(0, "00", 1);      //интерфейс "добавление специй"
         PutSpice saltToPut = new Salt(0, "00", 0);
+
+   /*     Path locPath = FileSystems.getDefault().getPath("locations_big.txt");
+        Path dirPath = FileSystems.getDefault().getPath("Directions_big.txt");
+        try(BufferedWriter locFile = Files.newBufferedWriter(locPath);
+            BufferedWriter dirFile = Files.newBufferedWriter(dirPath)) {
+
+            for (Location location: cheaf.getSort() )
+        } */
+
+   //     CharBuffer buffer = CharBuffer.wrap();
+
+
+
+
 
         while (true) {      //запускаем наш цикл
             cheaf.getQuest();
