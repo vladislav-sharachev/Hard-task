@@ -1,9 +1,9 @@
 package com.epam.vladislav_sharachev.java.lesson3.task1;
 
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.InvalidSearchValueExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.NegativeSumIndicatorExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.NegativeSortingIndicatorExcaption;
-import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.ZeroSortingIndicatorExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.SearchQueryIsInvalidExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SumIndicatorIsNegativeExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SortingIndicatorIsNegativeExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SortingIndicatorIsZeroExcaption;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Spices.PutSpice;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Vegetables.Salad;
 
@@ -19,24 +19,21 @@ public class CheafCook {
         this.foods = foods;
     }
 
-    public void getSorting() { //сортировка
+    public void getSorting() throws SortingIndicatorIsNegativeExcaption, SortingIndicatorIsZeroExcaption { //сортировка
         Arrays.sort(foods);
         for (int i = 0; i < foods.length; i++) {
             System.out.println(foods[i].getCalories() + " ккал - " + foods[i].getTitle());
 
-            try { //исключение при обращении к продукту с отрицательными каллориями
-                if (foods[i].getCalories() < 0) {
-                    throw new NegativeSortingIndicatorExcaption("Имеется продукт с отрицательным" +
-                            " показателем каллорийности");
-                } else if (foods[i].getCalories() == 0) {
-                    throw new ZeroSortingIndicatorExcaption("Имеется продукт с нулевым" +
-                            " показателем каллорийности");
-                }
-            } catch (NegativeSortingIndicatorExcaption | ZeroSortingIndicatorExcaption e) {
-                e.printStackTrace();
+            if (foods[i].getCalories() < 0) {
+                throw new SortingIndicatorIsNegativeExcaption("Имеется продукт с отрицательным" +
+                        " показателем каллорийности");
+            } else if (foods[i].getCalories() == 0) {
+                throw new SortingIndicatorIsZeroExcaption("Имеется продукт с нулевым" +
+                        " показателем каллорийности");
             }
         }
     }
+
 
     public void getMyEat() { //еда в холодильнике
         for (int i = 0; i < foods.length; i++) {
@@ -44,23 +41,18 @@ public class CheafCook {
         }
     }
 
-    public void getSum() { //сумма каллорий в пище
+    public void getSum() throws SumIndicatorIsNegativeExcaption { //сумма каллорий в пище
         int sum = 0;
         for (int i = 0; i < foods.length; ++i) {
-            try {
-                if (foods[i].getCalories() < 0) throw new NegativeSumIndicatorExcaption("Имеется продукт с отрицательным" +
-                        " показателем каллорийности");
-                //исключение при обращении к продукту с отрицательными каллориями
-            } catch (NegativeSumIndicatorExcaption e) {
-                e.printStackTrace();
-
-            }
+            if (foods[i].getCalories() < 0) throw new SumIndicatorIsNegativeExcaption("Имеется продукт с отрицательным" +
+                    " показателем каллорийности");
+            //исключение при обращении к продукту с отрицательными каллориями
             sum = (sum + foods[i].getCalories());
         }
         System.out.println("Общая каллорийность продуктов: " + sum + " ккал");
     }
 
-    public void getFind() { //поиск по диапазону по каллорий
+    public void getFind() throws SearchQueryIsInvalidExcaption { //поиск по диапазону по каллорий
         int searchMin = getSort();
         int searchMax = getSort();
         for (int i = 0; i < foods.length; i++) {
@@ -68,21 +60,10 @@ public class CheafCook {
                 System.out.println(+i + " " + foods[i].getTitle() + " - "
                         + foods[i].getCalories() + " ккал.");
         }
-        try {
-            if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
-                throw new InvalidSearchValueExcaption("Каллории не могут быть отрицательными");
-
-        } catch (InvalidSearchValueExcaption e) {
-            e.printStackTrace();
-        }
-        try {
-            if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
-                throw new InvalidSearchValueExcaption("Нижний дипапазон должен быть меньше верхнего");
-        } catch (InvalidSearchValueExcaption e) {
-            e.printStackTrace();
-        } finally {
-            System.out.println("Хотите продолжить?");
-        }
+        if (searchMin < 0 || searchMax < 0) // исключение  отрицательного значения
+            throw new SearchQueryIsInvalidExcaption("Каллории не могут быть отрицательными");
+        if (searchMin > searchMax) //исключение ситкации при которой нижний диапазон больше верхнего
+            throw new SearchQueryIsInvalidExcaption("Нижний дипапазон должен быть меньше верхнего");
     }
 
     Scanner searchScanner = new Scanner(System.in);
@@ -135,12 +116,7 @@ public class CheafCook {
 
     public void getFile() throws FileNotFoundException { //поиск файла рецепта + исключение
         File file = new File("Recepts");
-        try {
-            Scanner scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            System.out.println("ВАЖНО!!! Файл с рецептами не найден");
-        } finally {
-            System.out.println("Еду еще нужно приготовить");
-        }
+        Scanner scanner = new Scanner(file);
     }
+
 }

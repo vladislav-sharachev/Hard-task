@@ -1,8 +1,13 @@
 package com.epam.vladislav_sharachev.java.lesson3.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.checked.SearchQueryIsInvalidExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SortingIndicatorIsNegativeExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SumIndicatorIsNegativeExcaption;
+import com.epam.vladislav_sharachev.java.lesson3.task1.CustomException.unchecked.SortingIndicatorIsZeroExcaption;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson3.task1.Spices.*;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ToCook {
@@ -37,7 +42,13 @@ public class ToCook {
             switch (exit) {
                 case 1:
                     cheaf.getMyEat();
-                    cheaf.getFile();
+                    try {
+                        cheaf.getFile();
+                    } catch (FileNotFoundException e) {
+                        System.out.println("ВАЖНО!!! Файл с рецептами не найден");
+                    } finally {
+                        System.out.println("Еду еще нужно приготовить");
+                    }
                     break;
                 case 2:
                     cheaf.outputSaladInfo(garlicToSalad);
@@ -53,13 +64,27 @@ public class ToCook {
                     cheaf.soupIsReady();
                     break;
                 case 4:
-                    cheaf.getSum();
+                    try {
+                        cheaf.getSum();
+                    } catch (SumIndicatorIsNegativeExcaption e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 5:
-                    cheaf.getSorting();
+                    try {
+                        cheaf.getSorting();
+                    } catch (SortingIndicatorIsNegativeExcaption | SortingIndicatorIsZeroExcaption e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 6:
-                    cheaf.getFind();
+                    try {
+                        cheaf.getFind();
+                    } catch (SearchQueryIsInvalidExcaption e) {
+                        e.printStackTrace();
+                    } finally {
+                        System.out.println("Хотите продолжить?");
+                    }
                     break;
                 default:
                     System.out.println("Нет такого варианта");
