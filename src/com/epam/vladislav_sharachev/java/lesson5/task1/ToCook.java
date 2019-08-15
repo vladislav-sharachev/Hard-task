@@ -33,20 +33,6 @@ public class ToCook {
         PutSpice pepperToPut = new Pepper(0, "00", 1);      //интерфейс "добавление специй"
         PutSpice saltToPut = new Salt(0, "00", 0);
 
-   /*     Path locPath = FileSystems.getDefault().getPath("locations_big.txt");
-        Path dirPath = FileSystems.getDefault().getPath("Directions_big.txt");
-        try(BufferedWriter locFile = Files.newBufferedWriter(locPath);
-            BufferedWriter dirFile = Files.newBufferedWriter(dirPath)) {
-
-            for (Location location: cheaf.getSort() )
-        } */
-
-   //     CharBuffer buffer = CharBuffer.wrap();
-
-
-
-
-
         while (true) {      //запускаем наш цикл
             cheaf.getQuest();
             int exit = getSearchers();
@@ -57,7 +43,7 @@ public class ToCook {
             switch (exit) {
                 case 1:
                     cheaf.getMyEat();
-               //     cheaf.mySerial();
+                    //     cheaf.mySerial();
                     break;
 
                 case 2:

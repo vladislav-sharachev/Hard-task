@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class _WriteObject {
+public class WriteObject {
     public static void main(String[] args) {
 
         Product tomato = new Tomato(18, "Помидор", 200);
@@ -15,7 +15,6 @@ public class _WriteObject {
         Product carrot = new Carrot(41, "Морковь", 200);
         Product cabbage = new Cabbage(27, "Капуста", 500);
         Product beet = new Beet(43, "свекла", 500);
-
 
 
         try {
