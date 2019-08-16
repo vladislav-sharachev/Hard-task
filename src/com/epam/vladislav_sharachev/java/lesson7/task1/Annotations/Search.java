@@ -1,6 +1,8 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1.Annotations;
 
-public @interface NonNull {
+public @interface Search {
 
-    String title();
+    int searchMin();
+    int searchMax();
+
 }

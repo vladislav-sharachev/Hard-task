@@ -1,18 +1,26 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.ForStrings;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Init;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Sum;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Spices.*;
+
+import java.io.File;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.Scanner;
+import java.util.concurrent.ForkJoinPool;
 
 public class ToCook {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
 
         ToCook app = new ToCook();
         app.startToCookForMe();
 
     }
 
-    public void startToCookForMe() {
+    public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException {
 
 
         Product[] products = new Product[7];
@@ -31,6 +39,22 @@ public class ToCook {
         PutSpice pepperToPut = new Pepper(0, "00", 1);      //интерфейс "добавление специй"
         PutSpice saltToPut = new Salt(0, "00", 0);
 
+
+     /*   Class<CheafCook> obj = CheafCook.class;
+        if (obj.isAnnotationPresent(Sum.class)) {
+            Annotation annotation = obj.getAnnotation(Sum.class);
+            Sum custom = (Sum) annotation;
+            System.out.println("%nSum :%s");
+        }*/
+
+
+
+     cheaf.go("title");
+
+
+
+
+
         while (true) {      //запускаем наш цикл
             cheaf.getQuest();
             int exit = getSearchers();
@@ -41,6 +65,8 @@ public class ToCook {
             switch (exit) {
                 case 1:
                     cheaf.getMyEat();
+                //    cheaf.shouldNotBeProcessed();
+                 //   cheaf.shouldAlwaysBeProcessed();
                     break;
 
                 case 2:
