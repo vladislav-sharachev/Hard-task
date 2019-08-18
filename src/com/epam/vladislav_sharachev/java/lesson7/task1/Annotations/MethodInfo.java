@@ -9,7 +9,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MethodInfo {
     String author() default "Vlad";
-    String date ();
+
+    String date();
+
     int revision() default 1;
+
     String comments();
 }

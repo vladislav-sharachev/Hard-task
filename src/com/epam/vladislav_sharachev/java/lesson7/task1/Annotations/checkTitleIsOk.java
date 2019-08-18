@@ -10,7 +10,3 @@ import java.lang.annotation.Target;
 public @interface checkTitleIsOk {
     String info();
 }
-
-//@Inherited - все дочерние классы тоже получают аннотацию
-//@Retention() - когда запускать
-//@Target - к каким элементам класса применить, возможность ограничения

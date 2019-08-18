@@ -7,6 +7,10 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TitleOfVegetables {
-    String info();
+public @interface RangeOfValues {
+
+    int min();
+
+    int max();
+
 }

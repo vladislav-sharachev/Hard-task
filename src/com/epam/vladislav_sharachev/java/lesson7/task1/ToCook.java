@@ -1,24 +1,22 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
-import com.epam.vladislav_sharachev.java.lesson7.task1.Excaptions.FieldNotFoundExcaption;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Spices.*;
 
 import java.io.FileNotFoundException;
-import java.lang.reflect.Field;
 import java.util.Scanner;
 
 public class ToCook {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, FileNotFoundException {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, FileNotFoundException,
+            ClassNotFoundException {
 
         ToCook app = new ToCook();
         app.startToCookForMe();
 
     }
 
-    public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException, FileNotFoundException {
-
+    public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException, FileNotFoundException,
+            ClassNotFoundException {
 
 
         Product[] products = new Product[7];
@@ -31,48 +29,13 @@ public class ToCook {
         products[6] = new Pepper(1, "Перец", 1);
 
 
-
-
-
-
         CheafCook cheaf = new CheafCook(products);      //ссылаемся на класс шеф-повара
+        Test test = new Test(products);
         Salad garlicToSalad = new Garlic(149, "Чеснок", 20);    //интерфейс "добавление овощей в салат"
         Salad beetToSalad = new Beet(43, "Свекла", 500);
 
         PutSpice pepperToPut = new Pepper(0, "00", 1);      //интерфейс "добавление специй"
         PutSpice saltToPut = new Salt(0, "00", 0);
-
-
-     /*   Class<CheafCook> obj = CheafCook.class;
-        if (obj.isAnnotationPresent(Sum.class)) {
-            Annotation annotation = obj.getAnnotation(Sum.class);
-            Sum custom = (Sum) annotation;
-            System.out.println("%nSum :%s");
-        }*/
-
-cheaf.final1();
-cheaf.final2();
-
-cheaf.final3();
-
-
-  /*      try {
-
-            cheaf.final3();
-
-        } catch (FieldNotFoundExcaption e) {
-            e.printStackTrace();
-        }
-        finally {
-
-            System.out.println("Еду еще нужно приготовить");
-
-        } */
-
-
-
-
-
 
         while (true) {      //запускаем наш цикл
             cheaf.getQuest();
@@ -84,8 +47,6 @@ cheaf.final3();
             switch (exit) {
                 case 1:
                     cheaf.getMyEat();
-                //    cheaf.shouldNotBeProcessed();
-                 //   cheaf.shouldAlwaysBeProcessed();
                     break;
 
                 case 2:

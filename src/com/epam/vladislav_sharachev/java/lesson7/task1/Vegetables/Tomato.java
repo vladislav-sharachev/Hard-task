@@ -1,6 +1,5 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables;
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Product;
 
 
