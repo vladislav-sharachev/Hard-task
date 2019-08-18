@@ -1,14 +1,13 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1;
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.ForStrings;
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Init;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.MethodInfo;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Sum;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Spices.PutSpice;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables.Salad;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -19,25 +18,66 @@ public class CheafCook {
         this.foods = foods;
     }
 
-    public  void process(Object object) throws IllegalAccessException {
-        Class<?> objectClass = object.getClass();
+    public static void v1() { //***********************************
+        try {
+          for (Method method : ToCook.class
+                    .getClassLoader()
+                    .loadClass(("com.epam.vladislav_sharachev.java.lesson7.task1.CheafCook"))
+                    .getMethods())
+                if (method.isAnnotationPresent(MethodInfo.class)) {
+                    try {
+                        for (Annotation annot : method.getDeclaredAnnotations()) {
+                            System.out.println("Аннотация в методе " + method.getName() + " "
+                                    + annot.toString());
+                        }
+                        MethodInfo methodAnno = method
+                                .getAnnotation(MethodInfo.class);
+                        if (methodAnno.revision() == 1) {
+                            System.out.println("Метод с ревизией номер 1 = " + method.getName());
+                        } else if (methodAnno.revision() == 2) {
+                            System.out.println("Метод с ревизией номер 2 = " + method.getName());
+                        }
+
+                    } catch (Throwable ex) {
+                        ex.printStackTrace();
+                    }
+                }
+        } catch (SecurityException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    } //*********************************************************
+
+    public  void v2( ) throws NoSuchFieldException {
+        Class<?> productClass = Product.class;
+        Annotation[] annos = productClass.getAnnotations();
+
+        Field nameField = productClass.getDeclaredField("title");
+        Annotation[] fieldAnnos = nameField.getAnnotations();
+        for (Annotation ann : fieldAnnos) {
+            System.out.println(ann.annotationType().getSimpleName());
+        }
+    }
+
+
+    public void v3 () throws NoSuchFieldException, IllegalAccessException {
+
+    }
+
+
+
+    public  void process(Class<?> objectClass) throws IllegalAccessException {
+        objectClass = CheafCook.class.getClass();
         Annotation[] annotations;
-        String title;
         Field[] fields = objectClass.getFields();
         for (Field f : fields) {
             annotations = f.getAnnotations();
             for (Annotation a : annotations) {
-                if (a.annotationType().getSimpleName().equals(ForStrings.class.getSimpleName())) {
-                    if(f.get(object) != "title") {
-                        System.out.println(String.format("Warning: null value in %s", f.getName()));
-                    }
-                }
                 if (a.annotationType().getSimpleName().equals(Search.class.getSimpleName())) {
                     Search ann = (Search) a;
-                    if (f.getInt(object) > ann.searchMax()) {
-                        System.out.println(String.format("Warning...", f.getName(), f.getInt(object), ann.searchMax()));
-                    } else if (f.getInt(object) < ann.searchMin()) {
-                        System.out.println(String.format("Warning...", f.getName(), f.getInt(object), ann.searchMin()));
+                    if (f.getInt(CheafCook.class) > ann.max()) {
+                        System.out.println(String.format("Warning...", f.getName(), f.getInt(CheafCook.class), ann.max()));
+                    } else if (f.getInt(CheafCook.class) < ann.min()) {
+                        System.out.println(String.format("Warning...", f.getName(), f.getInt(CheafCook.class), ann.min()));
                     }
 
                 }
@@ -46,7 +86,21 @@ public class CheafCook {
         process(objectClass);
     }
 
-    public void go(Object object) throws NoSuchFieldException {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  public void go(Object object) throws NoSuchFieldException {
         Class<?> cheafCookClass = Product.class;
         Annotation[] annos = cheafCookClass.getAnnotations();
 
@@ -70,21 +124,19 @@ public class CheafCook {
                 }
             System.out.println(ann.annotationType().getSimpleName());
         }
-    }
+    } */
 
 
 
-    @Init
     String shouldAlwaysBeProcessed() {
         return "This always be processed";
     }
 
-    @Init(suppressException = false)
     public void shouldNotBeProcessed() {
         throw new RuntimeException("This should never be processed");
     }
 
-    @Init
+    @MethodInfo(date = "17 aug 2019", comments = "Mission Complete", revision = 2)
     public void getSorting() { //сортировка
 
         Arrays.sort(foods);
@@ -98,10 +150,10 @@ public class CheafCook {
             System.out.println(foods[i].getTitle());
         }
     }
-@Init
-    public void getSum() { //сумма каллорий в пище
-        @Sum
-        int sum = 0;
+@MethodInfo(date = "17 aug 2019", comments = "for Main Method")
+public void getSum() { //сумма каллорий в пище
+    @Search(min = 0, max = 2)
+        int sum = 3;
         for (int i = 0; i < foods.length; ++i) {
             sum = sum + foods[i].getCalories();
         }

@@ -5,8 +5,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.FIELD)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ForStrings {
-    String value() default  "Помидор";
+public @interface MethodInfo {
+    String author() default "Vlad";
+    String date ();
+    int revision() default 1;
+    String comments();
 }

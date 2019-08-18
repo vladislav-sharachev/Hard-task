@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.LOCAL_VARIABLE)
 public @interface Sum {
-    int sum() default 0;
+    int sum();
 }
 
 //@Inherited - все дочерние классы тоже получают аннотацию

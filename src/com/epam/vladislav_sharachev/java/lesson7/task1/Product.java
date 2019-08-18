@@ -1,11 +1,11 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1;
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.ForStrings;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.TitleOfVegetables;
 
 public abstract class Product implements Comparable { //использование интерфеса Comparable
     protected int weight; // инкапсуляция
     private int calories;
-    @ForStrings
+    @TitleOfVegetables(info = "title")
     public String title;
 
 

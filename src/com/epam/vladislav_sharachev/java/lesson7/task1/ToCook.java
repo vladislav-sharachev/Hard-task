@@ -1,16 +1,11 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.ForStrings;
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Init;
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Sum;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Spices.*;
 
-import java.io.File;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Scanner;
-import java.util.concurrent.ForkJoinPool;
 
 public class ToCook {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
@@ -22,7 +17,7 @@ public class ToCook {
 
     public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException {
 
-
+        @Search(min = 1, max = 5)
         Product[] products = new Product[7];
         products[0] = new Beet(43, "Свекла", 500);
         products[1] = new Cabbage(27, "Капуста", 500);
@@ -48,8 +43,11 @@ public class ToCook {
         }*/
 
 
+cheaf.v1();
+cheaf.v2();
+cheaf.v3();
 
-     cheaf.go("title");
+
 
 
 
