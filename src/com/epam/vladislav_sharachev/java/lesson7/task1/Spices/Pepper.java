@@ -5,7 +5,7 @@ import com.epam.vladislav_sharachev.java.lesson7.task1.Product;
 public class Pepper extends Product implements PutSpice { //приемственность
     public Pepper(int calories, String title, int weight) {
         super(calories, title, weight);
-        this.setCalories(1);
+        this.setCalories(-10);
         this.setTitle("Перец");
     }
 

@@ -1,17 +1,22 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1;
 
-import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.TitleOfVegetables;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.checkTitleIsOk;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 
 public abstract class Product implements Comparable { //использование интерфеса Comparable
     protected int weight; // инкапсуляция
-    private int calories;
-    @TitleOfVegetables(info = "title")
-    public String title;
+    @Search(min = 0, max = 250)
+    protected int calories;
+    @checkTitleIsOk(info = "title")
+    private String title0;
 
 
-    public Product(int calories, String title, int weight) {
+    public Product(int calories, String title0, int weight) {
         this.calories = calories; //ключевое слово this
-        this.title = title;
+        this.title0 = title0;
         this.weight = weight;
     }
 
@@ -20,11 +25,11 @@ public abstract class Product implements Comparable { //использовани
 
 
     public void setTitle(String itemTitle) { // this ключевое слово для для title
-        this.title = itemTitle;
+        this.title0 = itemTitle;
     }
 
     public String getTitle() {
-        return title;
+        return title0;
     }
 
     public void setCalories(int itemCalories) { // this ключевое слово для calories
@@ -48,4 +53,39 @@ public abstract class Product implements Comparable { //использовани
         }
         return 0;
     }
+
+    public void vfw() {
+        Class  <Product> myProduct = Product.class;
+        try {
+            for (
+                    Field method : Product.class
+                    .getClassLoader()
+                    .loadClass(("com.epam.vladislav_sharachev.java.lesson7.task1.Product"))
+                    .getDeclaredFields())
+                if (method.isAnnotationPresent(Search.class)) {
+                    try {
+                        Annotation[] annotations = Product.class.getDeclaredField("calories").getAnnotations();
+
+                        for (Annotation annot : annotations) {
+                            if (annot instanceof Search) {
+                                int min = Product.class.getDeclaredField("calories").getAnnotation(Search.class).min();
+                                int max = Product.class.getDeclaredField("calories").getAnnotation(Search.class).max();
+                                if(((Search) annot).max() < getCalories() || ((Search) annot).min() > getCalories()) {
+                                    System.out.println("WARNING! значение каллорий выходит за диапазон от 0 до 250");
+                                } else {
+                                    System.out.println("значение нормальное");
+                                }
+                            }
+                        }
+
+                    } catch (Throwable ex) {
+                        ex.printStackTrace();
+                    }
+                }
+        } catch (SecurityException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

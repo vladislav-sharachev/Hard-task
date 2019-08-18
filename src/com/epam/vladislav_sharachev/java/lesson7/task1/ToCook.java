@@ -1,23 +1,26 @@
 package com.epam.vladislav_sharachev.java.lesson7.task1; // Влад Шарачев 2 вариант (Шеф-повар)
 
 import com.epam.vladislav_sharachev.java.lesson7.task1.Annotations.Search;
+import com.epam.vladislav_sharachev.java.lesson7.task1.Excaptions.FieldNotFoundExcaption;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Vegetables.*;
 import com.epam.vladislav_sharachev.java.lesson7.task1.Spices.*;
 
+import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
 import java.util.Scanner;
 
 public class ToCook {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, FileNotFoundException {
 
         ToCook app = new ToCook();
         app.startToCookForMe();
 
     }
 
-    public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException {
+    public void startToCookForMe() throws NoSuchFieldException, IllegalAccessException, FileNotFoundException {
 
-        @Search(min = 1, max = 5)
+
+
         Product[] products = new Product[7];
         products[0] = new Beet(43, "Свекла", 500);
         products[1] = new Cabbage(27, "Капуста", 500);
@@ -26,6 +29,11 @@ public class ToCook {
         products[4] = new Potato(80, "Картофель", 200);
         products[5] = new Tomato(18, "Помидор", 200);
         products[6] = new Pepper(1, "Перец", 1);
+
+
+
+
+
 
         CheafCook cheaf = new CheafCook(products);      //ссылаемся на класс шеф-повара
         Salad garlicToSalad = new Garlic(149, "Чеснок", 20);    //интерфейс "добавление овощей в салат"
@@ -42,11 +50,24 @@ public class ToCook {
             System.out.println("%nSum :%s");
         }*/
 
+cheaf.final1();
+cheaf.final2();
 
-cheaf.v1();
-cheaf.v2();
-cheaf.v3();
+cheaf.final3();
 
+
+  /*      try {
+
+            cheaf.final3();
+
+        } catch (FieldNotFoundExcaption e) {
+            e.printStackTrace();
+        }
+        finally {
+
+            System.out.println("Еду еще нужно приготовить");
+
+        } */
 
 
 
