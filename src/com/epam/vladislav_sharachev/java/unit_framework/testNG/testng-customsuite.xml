@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Super-puper Suite" parallel="methods" thread-count="5">
+  <parameter name="param" value="Наша переменная лучше"></parameter>
+  <test name="MegaTestNew2">
+    <classes>
+      <class name="src.com.epam.vladislav_sharachev.java.unit_framework.testNG.ExpectedExsceptionTest"/>
+    </classes>
+  </test> <!-- JUnitTestNew2 -->
+</suite> <!-- Default Suite -->
