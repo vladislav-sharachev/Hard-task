@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Super-puper Suite" parallel="methods" thread-count="4">
+    <parameter name="param" value="Наша переменная"></parameter>
+    <test name="MegaTestNew2">
+        <classes>
+            <class name="TestNG.ParametrsTest"/>
+        </classes>
+    </test> <!-- JUnitTestNew2 -->
+</suite> <!-- Default Suite -->
