@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class MailWebDriver {
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "c:\\_webdriver\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized"); // Maximize browser window via options, just an example
         WebDriver driver = new ChromeDriver(options);
@@ -21,57 +21,59 @@ public class MailWebDriver {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement yaLoginEnter = driver.findElement(By.xpath
-                ("/html/body/div[1]/div[1]/div/div[1]/div/a[1]")); //элемент "Войти"
+                ("//a[contains(@class,\"enter\")]")); //элемент "Войти"
         yaLoginEnter.click();
         Thread.sleep(3000);
 
 
-        WebElement yaLoginIn = driver.findElement(By.xpath("//*[@id=\"passp-field-login\"]")); //ввести логин
+        WebElement yaLoginIn = driver.findElement(By.xpath("//input[contains(@id,'login')]")); //ввести логин
         yaLoginIn.click();
         yaLoginIn.sendKeys("com-epam-at"); //epamtest123456
 
-        WebElement yaLoginEnter2 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/form/div[3]/button[1]"));
+        WebElement yaLoginEnter2 = driver.findElement(By.xpath("//button[@type='submit']"));
         yaLoginEnter2.click();
 
         Thread.sleep(3000);
 
-        WebElement yaPassword = driver.findElement(By.xpath("//*[@id=\"passp-field-passwd\"]"));
+        WebElement yaPassword = driver.findElement(By.xpath("//input[@type='password']"));
         yaPassword.click();
         yaPassword.sendKeys("epamtest123456");
 
-        WebElement yaLoginEnter3 = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div[1]/form/div[2]/button[1]"));
+        WebElement yaLoginEnter3 = driver.findElement(By.xpath("//button[@type='submit']"));
         yaLoginEnter3.click();
 
         Thread.sleep(3000);
 
-        WebElement yaMailLoginTrue = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[2]/div[3]/div[6]/div"));
+        WebElement yaMailLoginTrue = driver.findElement(By.cssSelector("div.mail-User-Name"));
         Assert.assertTrue(yaMailLoginTrue.isDisplayed(), "No required element on the page!");
 
         System.out.println("LogIn was successfully done.");
 
-        WebElement yaWriteButton = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[3]/div[2]/div[3]/div/div[1]/div/div/a"));
+        WebElement yaWriteButton = driver.findElement(By.cssSelector("a.mail-ComposeButton"));
         yaWriteButton.click();
 
         Thread.sleep(3000);
 
 
-        WebElement yaFillAdress = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[3]/div[3]/div[2]/div[5]/div/div[1]/div[2]/div[1]/div/div[1]/label/div[3]/div"));
-        WebElement yaSubject = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[3]/div[3]/div[2]/div[5]/div/div[1]/div[2]/div[1]/div/label/div[3]/input"));
-        WebElement yaMessageBody = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/div"));
+        WebElement yaFillAdress = driver.findElement(By.cssSelector("div.js-compose-field[name^='to']"));
+        WebElement yaSubject = driver.findElement(By.xpath("//input[contains(@class,'mail-Compose-Field')]"));
+        WebElement yaMessageBody = driver.findElement(By.cssSelector("div.cke_wysiwyg_div"));
 
         yaFillAdress.sendKeys("vladislav_sharachev@epam.com");
         yaSubject.sendKeys("Selenium WebDriver AT");
         yaMessageBody.sendKeys("Hi, friend! This is an example of auto test.");
         Thread.sleep(3000);
 
-        WebElement yaChoiceDraft = driver.findElement(By.xpath("//*[@id='nb-1']/body/div[2]/div[5]/div/div[3]/div[3]/div[2]/div[5]/div/div[1]/div[2]/div[2]/div/div[3]/div[2]/span/span[1]"));
+        WebElement yaChoiceDraft = driver.findElement(By.xpath("//span[text()='как черновик']"));
         yaChoiceDraft.click();
 
-        WebElement yaSelectDraft = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[3]/div[2]/div[3]/div/div[2]/div[1]/a[5]/span"));
+        WebElement yaSelectDraft = driver.findElement(By.xpath("//span[contains(@class,'mail') and text()='Черновики']"));
         yaSelectDraft.click();
 
-        WebElement yaSelectDraftMail = driver.findElement(By.xpath("//*[@id=\"nb-1\"]/body/div[2]/div[5]/div/div[3]/div[3]/div[2]/div[5]/div[1]/div/div/div[2]/div/div[1]/div/div/div/a/div/span[1]/span[2]/span"));
+        WebElement yaSelectDraftMail = driver.findElement(By.xpath("//span[contains(text(),'Hi, friend!')]"));
         yaSelectDraftMail.click();
+
+        //div[1]//span[@title='vladislav_sharachev@epam.com']
 
         System.out.println("All tests were successfully finished.");
     }
