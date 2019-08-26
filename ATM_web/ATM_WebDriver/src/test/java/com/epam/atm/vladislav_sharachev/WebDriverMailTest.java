@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -17,8 +18,9 @@ public class WebDriverMailTest {
 
     private WebDriver driver;
 
+
     @BeforeClass
-    public void startBrowser() throws InterruptedException {
+    public void startBrowser() {
         System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized"); // Maximize browser window via options, just an example
@@ -31,22 +33,22 @@ public class WebDriverMailTest {
 
     @Test(priority = 1)
     public void loginToTheMail() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+
         WebElement yaLoginEnter = driver.findElement(By.xpath("//a[contains(@class,'enter')]")); //элемент "Войти"
         yaLoginEnter.click();
-        Thread.sleep(3000);
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));
 
         WebElement yaLoginIn = driver.findElement(By.xpath("//input[contains(@id,'login')]")); //ввести логин
-        yaLoginIn.click();
-        yaLoginIn.sendKeys("com-epam-at"); //epamtest123456
+        yaLoginIn.sendKeys("com-epam-at"); //epamtest123456 - пароль
 
         WebElement yaLoginEnter2 = driver.findElement(By.xpath("//button[@type='submit']"));
         yaLoginEnter2.click();
 
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='password']")));
 
         WebElement yaPassword = driver.findElement(By.xpath("//input[@type='password']"));
-        yaPassword.click();
         yaPassword.sendKeys("epamtest123456");
 
         WebElement yaLoginEnter3 = driver.findElement(By.xpath("//button[@type='submit']"));
@@ -57,8 +59,8 @@ public class WebDriverMailTest {
     }
 
     @Test(priority = 2)
-    public void assertTheLogin() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+    public void assertTheLogin() {
+        new WebDriverWait(driver, 1);
         WebElement yaMailLoginTrue = driver.findElement(By.cssSelector("div.mail-User-Name"));
         Assert.assertTrue(yaMailLoginTrue.isDisplayed(), "No required element on the page!");
 
@@ -67,7 +69,7 @@ public class WebDriverMailTest {
 
     @Test(priority = 3)
     public void createANewMail() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+        new WebDriverWait(driver, 1);
         WebElement yaWriteButton = driver.findElement(By.cssSelector("a.mail-ComposeButton"));
         yaWriteButton.click();
 
@@ -85,16 +87,16 @@ public class WebDriverMailTest {
     }
 
     @Test(priority = 4)
-    public void saveMail() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+    public void saveMail() {
+        new WebDriverWait(driver, 1);
         WebElement yaChoiceDraft = driver.findElement(By.xpath("//span[text()='как черновик']"));
         yaChoiceDraft.click();
     }
 
     @Test(priority = 5)
     public void verifyDraft() throws InterruptedException {
-        new WebDriverWait(driver, 5);
-        Thread.sleep(3000);
+        new WebDriverWait(driver, 1);
+        Thread.sleep(3000); //тот случай когда всеравно ждать 3 сек =)
 
         WebElement yaSelectDraft = driver.findElement(By.xpath("//span[contains(@class,'mail') and text()='Черновики']"));
         yaSelectDraft.click();
@@ -102,8 +104,8 @@ public class WebDriverMailTest {
     }
 
     @Test(priority = 6)
-    public void verifyDraftContent() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+    public void verifyDraftContent() {
+        new WebDriverWait(driver, 1);
         WebElement yaSelectDraftMail = driver.findElement(By.xpath("//span[text()='Это сообщение написано с помощью Selenium WebDriver']"));
         yaSelectDraftMail.click();
 
@@ -120,7 +122,7 @@ public class WebDriverMailTest {
 
     @Test(priority = 7)
     public void sendTheMail() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+        new WebDriverWait(driver, 1);
         WebElement yaSendMessage = driver.findElement(By.xpath("//span[contains(text(),'Отправить')]"));
         yaSendMessage.click();
 
@@ -129,7 +131,7 @@ public class WebDriverMailTest {
 
     @Test(priority = 8)
     public void verifyDraftAgain() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+        new WebDriverWait(driver, 1);
         WebElement yaSelectDraft2 = driver.findElement(By.xpath("//span[text()='Черновики']"));
         yaSelectDraft2.click();
 
@@ -141,7 +143,7 @@ public class WebDriverMailTest {
 
     @Test(priority = 9)
     public void verifySends() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+        new WebDriverWait(driver, 1);
         WebElement yaSelectSends = driver.findElement(By.xpath("//span[text()='Отправленные']"));
         yaSelectSends.click();
 
@@ -150,9 +152,10 @@ public class WebDriverMailTest {
 
         Thread.sleep(3000);
     }
+
     @Test(priority = 10)
-    public void logOff() throws InterruptedException {
-        new WebDriverWait(driver, 5);
+    public void logOff() {
+        new WebDriverWait(driver, 1);
         WebElement yaLogOff = driver.findElement(By.xpath("//span[@id='recipient-1']"));
         yaLogOff.click();
 
@@ -160,8 +163,9 @@ public class WebDriverMailTest {
         yaLogOffSelect.click();
     }
 
-        @AfterClass //выполняется самым последним
-        public void afterClass() {
-            System.out.println("All tests were successfully finished.");
-        }
+    @AfterClass //выполняется самым последним
+    public void stopBrowser() {
+        driver.quit();
+        System.out.println("All tests were successfully finished.");
+    }
 }
