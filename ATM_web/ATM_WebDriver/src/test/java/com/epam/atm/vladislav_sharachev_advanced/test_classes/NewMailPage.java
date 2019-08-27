@@ -35,7 +35,6 @@ public class NewMailPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-
     public NewMailPage newLetter() {
         waitVisibilityOfElementLocated(verifyLogin);
         newLetter.click();

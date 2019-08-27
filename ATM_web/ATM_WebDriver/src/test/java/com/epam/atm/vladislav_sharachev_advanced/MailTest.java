@@ -38,12 +38,14 @@ public class MailTest {
 
     @Test(description = "check for drafts", priority = 3)
     public void drafts() throws InterruptedException {
-        new DraftPage(driver).drafts().selectTheDraft().verifyAdress().verifySubject().verifyBody().send().draftAgain().verifyNonDraft();
+        new DraftPage(driver).drafts().selectTheDraft()
+                .verifyAdress().verifySubject().verifyBody().send().draftAgain().verifyNonDraft();
     }
 
     @Test(description = "check sends and log off", priority = 4)
     public void sends() {
-        new SendsPage(driver).checkSends().verifyLetter().logOffIcon().logOff();
+        new SendsPage(driver).checkSends()
+                .verifyLetter().logOffIcon().logOff();
     }
 
     @AfterClass(description = "close browser")

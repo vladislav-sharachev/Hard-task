@@ -14,10 +14,12 @@ public class AbstractPage {
     }
 
     protected void waitForElementToBeClickable(WebElement element) {
-        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS).until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.elementToBeClickable(element));
     }
 
     protected void waitVisibilityOfElementLocated(WebElement element) {
-        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.visibilityOf(element));
     }
 }
