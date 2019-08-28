@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class SendsPage extends AbstractPage {
 
@@ -32,7 +33,7 @@ public class SendsPage extends AbstractPage {
 
     public SendsPage verifyLetter() {
         waitVisibilityOfElementLocated(verifySends);
-        verifySends.isDisplayed();
+        Assert.assertTrue(verifySends.isDisplayed());
         return new SendsPage(driver);
     }
 

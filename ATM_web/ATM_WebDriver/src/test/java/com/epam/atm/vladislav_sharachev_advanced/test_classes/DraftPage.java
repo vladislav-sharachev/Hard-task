@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class DraftPage extends AbstractPage {
 
@@ -51,17 +52,17 @@ public class DraftPage extends AbstractPage {
 
     public DraftPage verifyAdress() {
         waitVisibilityOfElementLocated(verifyAdress);
-        verifyAdress.isDisplayed();
+        Assert.assertTrue(verifyAdress.isDisplayed());
         return new DraftPage(driver);
     }
 
     public DraftPage verifySubject() {
-        verifySubject.isDisplayed();
+        Assert.assertTrue(verifySubject.isDisplayed());
         return new DraftPage(driver);
     }
 
     public DraftPage verifyBody() {
-        verifyBody.isDisplayed();
+        Assert.assertTrue(verifyBody.isDisplayed());
         return new DraftPage(driver);
     }
 
@@ -77,7 +78,7 @@ public class DraftPage extends AbstractPage {
     }
 
     public DraftPage verifyNonDraft() {
-        getVerifyDraftAgain.isDisplayed();
+        Assert.assertTrue(getVerifyDraftAgain.isDisplayed());
         return new DraftPage(driver);
     }
 }

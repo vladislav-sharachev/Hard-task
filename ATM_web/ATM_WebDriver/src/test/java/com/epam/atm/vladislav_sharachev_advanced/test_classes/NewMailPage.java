@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class NewMailPage extends AbstractPage {
 
@@ -37,6 +38,7 @@ public class NewMailPage extends AbstractPage {
 
     public NewMailPage newLetter() {
         waitVisibilityOfElementLocated(verifyLogin);
+        Assert.assertTrue(verifyLogin.isDisplayed());
         newLetter.click();
         return new NewMailPage(driver);
     }
