@@ -10,25 +10,18 @@ public class DraftPage extends AbstractPage {
 
     @FindBy(xpath = "//span[contains(@class,'mail') and text()='Черновики']")
     private WebElement selectDraft;
-
     @FindBy(xpath = "//span[contains(text(),'Это сообщение написано')]")
     private WebElement verifyDraft;
-
     @FindBy(xpath = "//span[contains(@data-yabble-name,'com-epam-at')]")
     private WebElement verifyAdress;
-
     @FindBy(xpath = "//input[@value='Selenium WebDriver AT']")
     private WebElement verifySubject;
-
     @FindBy(xpath = "//div[contains(text(),'Привет! Это сообщение')]")
     private WebElement verifyBody;
-
     @FindBy(xpath = "//span[contains(text(),'Отправить')]")
     private WebElement sendLetter;
-
     @FindBy(xpath = "//span[text()='Черновики']")
     private WebElement choiceDraft;
-
     @FindBy(xpath = "//div[contains(text(),'нет писем')]")
     private WebElement getVerifyDraftAgain;
 
@@ -70,7 +63,8 @@ public class DraftPage extends AbstractPage {
         sendLetter.click();
         return new DraftPage(driver);
     }
-// убрать ожидание - зайти на яндексюдиск
+
+    // убрать ожидание - зайти на яндексюдиск
     public DraftPage draftAgain() throws InterruptedException {
         Thread.sleep(2000); //ждем пока яндекс обработает отправку!
         choiceDraft.click();

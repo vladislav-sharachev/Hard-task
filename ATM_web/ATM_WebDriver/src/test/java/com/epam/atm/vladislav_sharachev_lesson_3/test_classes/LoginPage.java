@@ -13,19 +13,14 @@ public class LoginPage extends AbstractPage {
 
     @FindBy(xpath = "//a[contains(@class,'enter')]")
     private WebElement enter;
-
     @FindBy(xpath = "//input[contains(@id,'login')]")
     private WebElement loginField;
-
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginEnter;
-
     @FindBy(xpath = "//input[@type='password']")
     private WebElement passwordField;
-
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement passwordEnter;
-
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

@@ -10,16 +10,12 @@ public class SendsPage extends AbstractPage {
 
     @FindBy(xpath = "//span[text()='Отправленные']")
     private WebElement sends;
-
     @FindBy(xpath = "//span[contains(text(),'com-epam-at')]")
     private WebElement verifySends;
-
     @FindBy(xpath = "//span[@id='recipient-1']")
     private WebElement userIcon;
-
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
-
     public SendsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);

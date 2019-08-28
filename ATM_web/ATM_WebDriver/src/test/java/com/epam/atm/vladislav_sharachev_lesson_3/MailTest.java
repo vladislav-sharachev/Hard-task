@@ -43,7 +43,7 @@ public class MailTest {
                 .verifyAdress().verifySubject().verifyBody().send().draftAgain().verifyNonDraft();
     }
 
-    @Test (description = "go to Yandex Disk", priority = 3)
+    @Test(description = "go to Yandex Disk", priority = 3)
     public void yandexDisk() {
         new YandexDiskPage(driver).openDisk().deleteImage().restoreImage().openMail();
     }

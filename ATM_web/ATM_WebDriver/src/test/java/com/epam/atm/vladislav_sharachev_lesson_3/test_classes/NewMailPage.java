@@ -12,24 +12,16 @@ public class NewMailPage extends AbstractPage {
 
     private static final String adress = "com-epam-at@yandex.ru";
     private static final String subject = "Selenium WebDriver AT";
-    private static final String body = "Привет! Это сообщение написано с помощью Selenium WebDriver." +
-            " После написания ждем еще 5 сек - пока Яндекс сохранит черновик :)";
+    private static final String body = "Привет! Это сообщение написано с помощью Selenium WebDriver.";
 
     @FindBy(css = "div.mail-User-Name")
     private WebElement verifyLogin;
-
-    @FindBy(css = "a.mail-ComposeButton")
-    private WebElement newLetter;
-
     @FindBy(css = "div.js-compose-field[name^='to']")
     private WebElement AdressField;
-
     @FindBy(xpath = "//input[contains(@class,'mail-Compose-Field')]")
     private WebElement subjectField;
-
     @FindBy(css = "div.cke_wysiwyg_div")
     private WebElement bodyField;
-
     @FindBy(xpath = "//span[text()='Сохранить и перейти']")
     private WebElement saveDraft;
     @FindBy(xpath = "//span[text()='Черновики']")

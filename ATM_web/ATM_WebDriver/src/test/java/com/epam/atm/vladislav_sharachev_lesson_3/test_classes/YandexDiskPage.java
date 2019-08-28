@@ -12,7 +12,6 @@ public class YandexDiskPage extends AbstractPage {
 
     private static final String diskURL = "https://disk.yandex.ru/client/disk";
     private static final String mailURL = "https://mail.yandex.ru/?uid=924890569#inbox";
-
     @FindBy(xpath = "//img[contains(@src,'/1')]/parent::div/div")
     private WebElement image;
     @FindBy(xpath = "//span[contains(text(),'Корзина')]")
@@ -25,9 +24,6 @@ public class YandexDiskPage extends AbstractPage {
     private WebElement contextMenuOk;
     @FindBy(xpath = "//div[@class='b-progressbar__fill']")
     private WebElement restoreLine;
-
-    @FindBy(xpath = "//span[text()='Черновики']")
-    private WebElement draft;
 
     public YandexDiskPage(WebDriver driver) {
         super(driver);
@@ -56,13 +52,5 @@ public class YandexDiskPage extends AbstractPage {
         waitVisibilityOfElementLocated(restoreLine);
         driver.get(mailURL);
         return this;
-    }
-
-    public YandexDiskPage goDown() {
-
-        waitVisibilityOfElementLocated(draft);
-        WebElement input = driver.findElement(By.xpath("//span[text()='Черновики']"));
-        new Actions(driver).sendKeys(input, Keys.chord(Keys.CONTROL, "s")).build().perform();
-        return new YandexDiskPage(driver);
     }
 }
