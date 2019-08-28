@@ -1,5 +1,6 @@
 package com.epam.atm.vladislav_sharachev_lesson_3.test_classes;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,9 @@ public class LoginPage extends AbstractPage {
     private WebElement passwordField;
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement passwordEnter;
+    @FindBy (xpath = "//*[@id=\"nb-4\"]/div/span")
+    private WebElement allLettersText;
+
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -58,4 +62,12 @@ public class LoginPage extends AbstractPage {
         passwordEnter.click();
         return new LoginPage(driver);
     }
+
+    public LoginPage jsExecotor() throws InterruptedException {
+        Thread.sleep(10000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("alert('hello world');", allLettersText);
+        return new LoginPage(driver);
+    }
+
 }

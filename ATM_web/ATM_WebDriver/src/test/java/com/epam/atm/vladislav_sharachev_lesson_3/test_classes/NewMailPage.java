@@ -40,7 +40,7 @@ public class NewMailPage extends AbstractPage {
     }
 
     public NewMailPage fillAdress() {
-        waitVisibilityOfElementLocated(AdressField);
+        waitForElementToBeClickable(AdressField);
         AdressField.sendKeys(adress);
         return this;
     }
@@ -56,6 +56,7 @@ public class NewMailPage extends AbstractPage {
     }
 
     public NewMailPage savedraft() {
+        waitVisibilityOfElementLocated(bodyField);
         new Actions(driver).sendKeys(draft, Keys.chord(Keys.CONTROL, "s")).build().perform();
         waitForElementToBeClickable(saveDraft);
         saveDraft.click();
