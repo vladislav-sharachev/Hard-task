@@ -71,6 +71,7 @@ public class DraftPage extends AbstractPage {
     }
 
     public DraftPage verifyNonDraft() {
+        waitVisibilityOfElementLocated(getVerifyDraftAgain);
         Assert.assertTrue(getVerifyDraftAgain.isDisplayed());
         return new DraftPage(driver);
     }

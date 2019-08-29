@@ -34,12 +34,14 @@ public class YandexDiskPage extends AbstractPage {
     }
 
     public YandexDiskPage deleteImage() {
+        waitVisibilityOfElementLocated(image);
         Actions deleteImage = new Actions(driver);
         deleteImage.dragAndDrop(image, trashImage).doubleClick(trash).build().perform();
         return new YandexDiskPage(driver);
     }
 
     public YandexDiskPage restoreImage() {
+        waitVisibilityOfElementLocated(contextMenuImage);
         Actions restoreImage = new Actions(driver);
         restoreImage.contextClick(contextMenuImage).build().perform();
         restoreImage.click(contextMenuOk).build().perform();

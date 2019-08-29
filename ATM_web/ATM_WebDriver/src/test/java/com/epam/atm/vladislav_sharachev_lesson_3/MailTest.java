@@ -5,14 +5,16 @@ import com.epam.atm.vladislav_sharachev_lesson_3.test_classes.DraftPage;
 import com.epam.atm.vladislav_sharachev_lesson_3.test_classes.LoginPage;
 import com.epam.atm.vladislav_sharachev_lesson_3.test_classes.NewMailPage;
 import com.epam.atm.vladislav_sharachev_lesson_3.test_classes.SendsPage;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MailTest {
 
@@ -20,15 +22,28 @@ public class MailTest {
 
     @BeforeClass(description = "Start browser")
     public void startBrowser() {
+
         System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setPlatform(Platform.WINDOWS);
+//        System.setProperty("webdriver.gecko.driver", "d:\\_webdriver\\chromedriver\\geckodriver.exe");
+//        DesiredCapabilities capabilities1 = DesiredCapabilities.firefox();
+//        capabilities1.setPlatform(Platform.WINDOWS);
+        try {
+            driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+//        try {
+//            driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities1);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     @Test(description = "login", priority = 1)
-    public void login() throws InterruptedException {
+    public void login() {
         new LoginPage(driver).open().firstEnter().userName().userNameEnter().password().passwordEnter();
     }
 
