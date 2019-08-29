@@ -11,6 +11,7 @@ public class LoginPage extends AbstractPage {
     private static final String URL = "https://yandex.ru";
     private static final String userLogin = "com-epam-at";
     private static final String userPassword = "epamtest123456";
+    private JavascriptExecutor js = (JavascriptExecutor) driver;
 
     @FindBy(xpath = "//a[contains(@class,'enter')]")
     private WebElement enter;
@@ -22,8 +23,6 @@ public class LoginPage extends AbstractPage {
     private WebElement passwordField;
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement passwordEnter;
-    @FindBy (xpath = "//*[@id=\"nb-4\"]/div/span")
-    private WebElement allLettersText;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -37,36 +36,32 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage firstEnter() {
         waitVisibilityOfElementLocated(enter);
-        enter.click();
+        js.executeScript ("arguments[0].style.border='3px solid red';", enter);
+        js.executeScript ("arguments[0].click();", enter);
         return new LoginPage(driver);
     }
 
     public LoginPage userName() {
         waitVisibilityOfElementLocated(loginField);
+        js.executeScript ("arguments[0].style.border='3px solid red';", loginField);
         loginField.sendKeys(userLogin);
         return this;
     }
 
     public LoginPage userNameEnter() {
-        loginEnter.click();
+        js.executeScript ( "arguments[0].click();", loginEnter) ;
         return new LoginPage(driver);
     }
 
     public LoginPage password() {
         waitVisibilityOfElementLocated(passwordField);
+        js.executeScript ("arguments[0].style.border='3px solid red';", passwordField);
         passwordField.sendKeys(userPassword);
         return this;
     }
 
     public LoginPage passwordEnter() {
-        passwordEnter.click();
-        return new LoginPage(driver);
-    }
-
-    public LoginPage jsExecotor() throws InterruptedException {
-        Thread.sleep(10000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("alert('hello world');", allLettersText);
+        js.executeScript ( "arguments[0].click();", passwordEnter) ;
         return new LoginPage(driver);
     }
 

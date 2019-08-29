@@ -16,6 +16,7 @@ public class SendsPage extends AbstractPage {
     private WebElement userIcon;
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
+
     public SendsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
