@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="test" verbose="3">
-    <test name="startBrowser" parallel="methods" thread-count="3">
-        <classes>
-            <class name="com.epam.atm.vladislav_sharachev_lesson_3.MailTest"></class>
-        </classes>
-    </test> <!-- JUnitTestNew2 -->
-</suite> <!-- Default Suite -->

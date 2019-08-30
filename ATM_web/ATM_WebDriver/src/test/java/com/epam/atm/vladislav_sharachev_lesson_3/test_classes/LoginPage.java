@@ -36,32 +36,32 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage firstEnter() {
         waitVisibilityOfElementLocated(enter);
-        js.executeScript ("arguments[0].style.border='3px solid red';", enter);
-        js.executeScript ("arguments[0].click();", enter);
+        js.executeScript("arguments[0].style.border='3px solid red';", enter);
+        js.executeScript("arguments[0].click();", enter);
         return new LoginPage(driver);
     }
 
     public LoginPage userName() {
         waitVisibilityOfElementLocated(loginField);
-        js.executeScript ("arguments[0].style.border='3px solid red';", loginField);
+        js.executeScript("arguments[0].style.border='3px solid red';", loginField);
         loginField.sendKeys(userLogin);
         return this;
     }
 
     public LoginPage userNameEnter() {
-        js.executeScript ( "arguments[0].click();", loginEnter) ;
+        js.executeScript("arguments[0].click();", loginEnter);
         return new LoginPage(driver);
     }
 
     public LoginPage password() {
         waitVisibilityOfElementLocated(passwordField);
-        js.executeScript ("arguments[0].style.border='3px solid red';", passwordField);
+        js.executeScript("arguments[0].style.border='3px solid red';", passwordField);
         passwordField.sendKeys(userPassword);
         return this;
     }
 
     public LoginPage passwordEnter() {
-        js.executeScript ( "arguments[0].click();", passwordEnter) ;
+        js.executeScript("arguments[0].click();", passwordEnter);
         return new LoginPage(driver);
     }
 

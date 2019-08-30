@@ -26,20 +26,12 @@ public class MailTest {
         System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setPlatform(Platform.WINDOWS);
-//        System.setProperty("webdriver.gecko.driver", "d:\\_webdriver\\chromedriver\\geckodriver.exe");
-//        DesiredCapabilities capabilities1 = DesiredCapabilities.firefox();
-//        capabilities1.setPlatform(Platform.WINDOWS);
+
         try {
             driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-//        try {
-//            driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities1);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
     }
 
     @Test(description = "login", priority = 1)
