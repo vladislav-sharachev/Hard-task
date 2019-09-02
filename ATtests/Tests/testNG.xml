@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests suites" parallel="methods" thread-count="3">
+    <test verbose="2" name="MegaTest">
+        <classes>
+            <class name="com.epam.vladislav_sharachev.tests.AllTests"></class>
+        </classes>
+    </test>
+</suite>
