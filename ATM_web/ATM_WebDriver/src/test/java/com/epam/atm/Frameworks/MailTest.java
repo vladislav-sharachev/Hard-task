@@ -14,7 +14,7 @@ public class MailTest {
 
     @BeforeClass(description = "Start browser")
     public void startBrowser() {
-        driver = new DriverManager(driver).goDriver();
+        driver = new DriverManager().getDriver();
     }
 
     @Test(description = "login", priority = 1)

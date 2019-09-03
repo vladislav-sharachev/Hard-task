@@ -7,13 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 
-public class DriverManager extends AbstractPage {
+public class DriverManager {
 
-    public DriverManager(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
+    private static WebDriver driver;
+
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            setDriver();
+        }
+        return driver;
     }
-    public WebDriver goDriver() {
+
+    public static WebDriver setDriver() {
         System.setProperty("webdriver.chrome.driver", "c:\\_webdriver\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
