@@ -1,4 +1,4 @@
-package com.epam.atm.Frameworks.bo;
+package com.epam.atm.Framework.bo;
 
 public class User {
 

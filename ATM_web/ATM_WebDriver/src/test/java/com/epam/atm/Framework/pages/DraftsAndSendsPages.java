@@ -1,4 +1,4 @@
-package com.epam.atm.Frameworks.test_classes;
+package com.epam.atm.Framework.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class DraftPage extends AbstractPage {
+public class DraftsAndSendsPages extends AbstractPage {
 
     @FindBy(xpath = "//span[contains(@class,'mail') and text()='Черновики']")
-    private WebElement selectDraft;
+    private WebElement selectDrafts;
     @FindBy(xpath = "//span[text()='com-epam-at']")
     private WebElement verifyDraft;
     @FindBy(xpath = "//span[contains(@data-yabble-name,'com-epam-at')]")
@@ -23,56 +23,50 @@ public class DraftPage extends AbstractPage {
     @FindBy(xpath = "//span[text()='Черновики']")
     private WebElement choiceDraft;
     @FindBy(xpath = "//div[contains(text(),'нет писем')]")
-    private WebElement getVerifyDraftAgain;
+    private WebElement verifyDraftAgain;
+    @FindBy(xpath = "//span[text()='Отправленные']")
+    private WebElement sends;
+    @FindBy(xpath = "//span[contains(text(),'com-epam-at')]")
+    private WebElement verifySends;
 
-
-    public DraftPage(WebDriver driver) {
+    public DraftsAndSendsPages(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public DraftPage drafts() {
-        waitForElementToBeClickable(selectDraft);
-        selectDraft.click();
-        return new DraftPage(driver);
-    }
-
-    public DraftPage selectTheDraft() {
+    public DraftsAndSendsPages drafts() {
+        waitForElementToBeClickable(selectDrafts);
+        selectDrafts.click();
         waitVisibilityOfElementLocated(verifyDraft);
         verifyDraft.click();
-        return new DraftPage(driver);
+        return new DraftsAndSendsPages(driver);
     }
 
-    public DraftPage verifyAdress() {
+    public DraftsAndSendsPages verifyLetter() {
         waitVisibilityOfElementLocated(verifyAdress);
         Assert.assertTrue(verifyAdress.isDisplayed());
-        return new DraftPage(driver);
-    }
-
-    public DraftPage verifySubject() {
         Assert.assertTrue(verifySubject.isDisplayed());
-        return new DraftPage(driver);
-    }
-
-    public DraftPage verifyBody() {
         Assert.assertTrue(verifyBody.isDisplayed());
-        return new DraftPage(driver);
+        return new DraftsAndSendsPages(driver);
     }
-
-    public DraftPage send() {
+    public DraftsAndSendsPages send() {
         sendLetter.click();
-        return new DraftPage(driver);
+        return new DraftsAndSendsPages(driver);
     }
 
-    public DraftPage draftAgain() throws InterruptedException {
+    public DraftsAndSendsPages verifyNonDraft() throws InterruptedException {
         Thread.sleep(2000); //ждем пока яндекс обработает отправку!
         choiceDraft.click();
-        return new DraftPage(driver);
+        waitVisibilityOfElementLocated(verifyDraftAgain);
+        Assert.assertTrue(verifyDraftAgain.isDisplayed());
+        return new DraftsAndSendsPages(driver);
     }
 
-    public DraftPage verifyNonDraft() {
-        waitVisibilityOfElementLocated(getVerifyDraftAgain);
-        Assert.assertTrue(getVerifyDraftAgain.isDisplayed());
-        return new DraftPage(driver);
+    public DraftsAndSendsPages verifySends() {
+        waitVisibilityOfElementLocated(sends);
+        sends.click();
+        waitVisibilityOfElementLocated(verifySends);
+        Assert.assertTrue(verifySends.isDisplayed());
+        return new DraftsAndSendsPages(driver);
     }
 }

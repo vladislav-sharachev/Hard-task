@@ -1,6 +1,6 @@
-package com.epam.atm.Frameworks.utils;
+package com.epam.atm.Framework.utils;
 
-import com.epam.atm.Frameworks.drivermanagers.DriverManager;
+import com.epam.atm.Framework.drivermanagers.DriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

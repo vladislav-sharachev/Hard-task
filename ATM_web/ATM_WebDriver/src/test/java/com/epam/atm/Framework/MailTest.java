@@ -1,9 +1,9 @@
-package com.epam.atm.Frameworks;
+package com.epam.atm.Framework;
 
-import com.epam.atm.Frameworks.bo.Message;
-import com.epam.atm.Frameworks.drivermanagers.DriverManager;
-import com.epam.atm.Frameworks.bo.User;
-import com.epam.atm.Frameworks.pages.*;
+import com.epam.atm.Framework.bo.Message;
+import com.epam.atm.Framework.drivermanagers.DriverManager;
+import com.epam.atm.Framework.bo.User;
+import com.epam.atm.Framework.pages.*;
 import org.openqa.selenium.WebDriver;
 
 import org.testng.annotations.AfterClass;
@@ -25,6 +25,7 @@ public class MailTest {
     @BeforeClass(dependsOnMethods = "startBrowser", description = "Add implicit wait and maximize window")
     public void addImplicitly() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     @Test(description = "login", priority = 1)

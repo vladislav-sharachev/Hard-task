@@ -1,4 +1,4 @@
-package com.epam.atm.Frameworks.pages;
+package com.epam.atm.Framework.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

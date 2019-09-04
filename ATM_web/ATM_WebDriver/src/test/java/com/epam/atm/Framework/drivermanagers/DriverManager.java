@@ -1,4 +1,4 @@
-package com.epam.atm.Frameworks.drivermanagers;
+package com.epam.atm.Framework.drivermanagers;
 
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,7 +1,7 @@
-package com.epam.atm.Frameworks.pages;
+package com.epam.atm.Framework.pages;
 
-import com.epam.atm.Frameworks.bo.User;
-import com.epam.atm.Frameworks.utils.Tools;
+import com.epam.atm.Framework.bo.User;
+import com.epam.atm.Framework.utils.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
