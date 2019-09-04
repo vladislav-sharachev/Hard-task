@@ -34,6 +34,6 @@ public class InvalidLogin {
 
     @AfterClass(description = "close browser")
     public void kill() {
-        driver.close();
+        driver.quit();
     }
 }
