@@ -1,5 +1,6 @@
 package com.epam.atm.Frameworks;
 
+import com.epam.atm.Frameworks.bo.Message;
 import com.epam.atm.Frameworks.drivermanagers.DriverManager;
 import com.epam.atm.Frameworks.bo.User;
 import com.epam.atm.Frameworks.pages.*;
@@ -9,6 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class MailTest {
 
     private static WebDriver driver;
@@ -16,8 +19,12 @@ public class MailTest {
 
     @BeforeClass(description = "Start browser")
     public void startBrowser() {
-        driver = DriverManager.getDriver();
+        driver = DriverManager.getDriver("chrome");
         driver.get(START_URL);
+    }
+    @BeforeClass(dependsOnMethods = "startBrowser", description = "Add implicit wait and maximize window")
+    public void addImplicitly() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @Test(description = "login", priority = 1)
@@ -27,7 +34,7 @@ public class MailTest {
 
     @Test(description = "new letter", priority = 2)
     public void newMail() {
-        new NewMailPage(driver).newLetter().fillAdress().subject().body().savedraft();
+        new NewMailPage(driver).newLetter().letterText(new Message()).savedraft();
     }
 
     @Test(description = "go to Yandex Disk", priority = 3)
@@ -36,15 +43,13 @@ public class MailTest {
     }
 
     @Test(description = "check for drafts", priority = 4)
-    public void drafts() throws InterruptedException {
-        new DraftPage(driver).drafts().selectTheDraft()
-                .verifyAdress().verifySubject().verifyBody().send().draftAgain().verifyNonDraft();
+    public void draftAndSends() throws InterruptedException {
+        new DraftsAndSendsPages(driver).drafts().verifyLetter().send().verifyNonDraft().verifySends();
     }
 
-    @Test(description = "check sends and log off", priority = 5)
-    public void sends() {
-        new SendsPage(driver).checkSends()
-                .verifyLetter().logOffIcon().logOff();
+    @Test(description = "log off", priority = 5)
+    public void logOut() {
+        new LogOff(driver).logOff();
     }
 
     @AfterClass(description = "close browser")

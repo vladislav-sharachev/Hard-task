@@ -1,5 +1,6 @@
 package com.epam.atm.Frameworks.pages;
 
+import com.epam.atm.Frameworks.bo.Message;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,14 +11,10 @@ import org.testng.Assert;
 
 public class NewMailPage extends AbstractPage {
 
-    private static final String adress = "com-epam-at@yandex.ru";
-    private static final String subject = "Selenium WebDriver AT";
-    private static final String body = "Привет! Это сообщение написано с помощью Selenium WebDriver.";
-
     @FindBy(css = "div.mail-User-Name")
     private WebElement verifyLogin;
     @FindBy(css = "div.js-compose-field[name^='to']")
-    private WebElement AdressField;
+    private WebElement AddressField;
     @FindBy(xpath = "//input[contains(@class,'mail-Compose-Field')]")
     private WebElement subjectField;
     @FindBy(css = "div.cke_wysiwyg_div")
@@ -39,19 +36,11 @@ public class NewMailPage extends AbstractPage {
         return new NewMailPage(driver);
     }
 
-    public NewMailPage fillAdress() {
-        waitForElementToBeClickable(AdressField);
-        AdressField.sendKeys(adress);
-        return this;
-    }
-
-    public NewMailPage subject() {
-        subjectField.sendKeys(subject);
-        return this;
-    }
-
-    public NewMailPage body() {
-        bodyField.sendKeys(body);
+    public NewMailPage letterText(Message message) {
+        waitForElementToBeClickable(AddressField);
+        AddressField.sendKeys(message.getAdress());
+        subjectField.sendKeys(message.getSubject());
+        bodyField.sendKeys(message.getBody());
         return this;
     }
 
