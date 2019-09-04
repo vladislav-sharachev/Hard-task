@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4318c052-2d2a-4fe3-b688-1ce6e4f0d089" name="Default Changelist" comment="" />
+    <list default="true" id="940c405a-6238-4245-b9a6-bc6bf057f1de" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +15,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1QNFNbchiT0NsGZ44UKf7emFAnT" />
+  <component name="ProjectId" id="1QNbmpKQgHuqvEbxEfi2TRBMgTb" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -29,7 +29,17 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.MailTest">
-    <configuration name="InvalidLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/1/IdeaProjects/AT_lab/AT_Framework/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AT_Framework" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/AT_Framework/testNG.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvalidLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="AT_Framework" />
       <extension name="coverage">
         <pattern>
@@ -38,7 +48,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.atm.Framework.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.atm.Framework.tests.InvalidLogin" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.atm.Framework.tests.InvalidLoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -66,7 +76,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.MailTest" />
-        <item itemvalue="TestNG.InvalidLogin" />
+        <item itemvalue="TestNG.InvalidLoginTest" />
+        <item itemvalue="TestNG.C:/Users/1/IdeaProjects/AT_lab/AT_Framework/testNG.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -75,11 +86,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4318c052-2d2a-4fe3-b688-1ce6e4f0d089" name="Default Changelist" comment="" />
-      <created>1567603107476</created>
+      <changelist id="940c405a-6238-4245-b9a6-bc6bf057f1de" name="Default Changelist" comment="" />
+      <created>1567614162744</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567603107476</updated>
+      <updated>1567614162744</updated>
     </task>
     <servers />
   </component>

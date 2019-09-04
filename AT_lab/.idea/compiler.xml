@@ -9,8 +9,5 @@
         <module name="AT_Framework" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="AT_Int_Lab" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

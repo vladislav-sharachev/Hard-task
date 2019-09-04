@@ -21,7 +21,7 @@ public class DriverManager {
 
     public static WebDriver setDriver(String browserName) {
         if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "c:\\_webdriver\\chromedriver\\chromedriver.exe");
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
             capabilities.setPlatform(Platform.WINDOWS);
             try {

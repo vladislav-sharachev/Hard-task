@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Tests classes">
+
+    <test name="MailTest">
+        <classes>
+            <class name="com.epam.atm.Framework.tests.InvalidLoginTest"></class>
+            <class name="com.epam.atm.Framework.tests.MailTest"></class>
+        </classes>
+    </test>
+</suite>
