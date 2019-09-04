@@ -14,7 +14,7 @@ public class YandexDiskPage extends AbstractPage {
     private WebElement image;
     @FindBy(xpath = "//span[contains(text(),'Корзина')]")
     private WebElement trashImage;
-    @FindBy(xpath = "//a[@id='/trash' and @data-reactid='135']")
+    @FindBy(xpath = "//a[@id='/trash']")
     private WebElement trash;
     @FindBy(css = "div.listing-item__fields")
     private WebElement contextMenuImage;
