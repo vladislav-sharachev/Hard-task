@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class MailTest {
 
@@ -26,12 +27,13 @@ public class MailTest {
         System.setProperty("webdriver.chrome.driver", "d:\\_webdriver\\chromedriver\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setPlatform(Platform.WINDOWS);
-
         try {
             driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     @Test(description = "login", priority = 1)

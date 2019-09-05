@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class YandexDiskPage extends AbstractPage {
 
-    private static final String diskURL = "https://disk.yandex.ru/client/disk";
-    private static final String mailURL = "https://mail.yandex.ru/?uid=924890569#inbox";
     @FindBy(xpath = "//img[contains(@src,'/1')]/parent::div/div")
     private WebElement image;
     @FindBy(xpath = "//span[contains(text(),'Корзина')]")
@@ -22,6 +20,10 @@ public class YandexDiskPage extends AbstractPage {
     private WebElement contextMenuOk;
     @FindBy(xpath = "//div[@class='b-progressbar__fill']")
     private WebElement restoreLine;
+    @FindBy(xpath = "//a[contains(@class,'Disk')]/span[text()='Диск']")
+    private WebElement clickDisk;
+    @FindBy(xpath = "//a[@href='https://mail.yandex.ru' and contains(@class,'menu__link')]")
+    private WebElement clickMail;
 
     public YandexDiskPage(WebDriver driver) {
         super(driver);
@@ -29,7 +31,14 @@ public class YandexDiskPage extends AbstractPage {
     }
 
     public YandexDiskPage openDisk() {
-        driver.get(diskURL);
+        waitForElementToBeClickable(clickDisk);
+        clickDisk.click();
+        String currentTab = driver.getWindowHandle();
+        for (String tab : driver.getWindowHandles()) {
+            if (!tab.equals(currentTab)) {
+                driver.switchTo().window(tab);
+            }
+        }
         return this;
     }
 
@@ -50,7 +59,7 @@ public class YandexDiskPage extends AbstractPage {
 
     public YandexDiskPage openMail() {
         waitVisibilityOfElementLocated(restoreLine);
-        driver.get(mailURL);
+        clickMail.click();
         return this;
     }
 }
