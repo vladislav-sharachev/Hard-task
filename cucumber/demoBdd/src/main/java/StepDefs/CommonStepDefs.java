@@ -58,17 +58,23 @@ public class CommonStepDefs extends AbstractStepDefs {
 
     @Given("I write first letter")
     public void i_write_first_letter() {
+        onNewMailPage().clickToWriteLetter();
         onNewMailPage().writeFirstLetter();
+        onNewMailPage().saveDraft();
     }
 
     @And("I write second letter")
     public void i_write_second_letter() {
+        onNewMailPage().clickToWriteLetter();
         onNewMailPage().writeSecondLetter();
+        onNewMailPage().saveDraft();
     }
 
     @And("I write third letter")
     public void i_write_third_letter() {
+        onNewMailPage().clickToWriteLetter();
         onNewMailPage().writeThirdLetter();
+        onNewMailPage().saveDraft();
     }
 
     @When("I go to drafts")

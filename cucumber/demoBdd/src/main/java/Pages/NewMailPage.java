@@ -30,38 +30,32 @@ public class NewMailPage extends AbstractPage {
     }
 
     public void writeFirstLetter() {
-        writeNewLetter.click();
-        waitForElementIsVisible(addressField);
         addressField.sendKeys("com-epam-at1@yandex.ru");
         subjectField.sendKeys("test letter");
         bodyField.sendKeys("test text");
-        close.click();
-        saveOk.click();
-        DriverManager.getDriver().navigate().refresh();
     }
 
     public void writeSecondLetter() {
-        waitForElementClickable(writeNewLetter);
-        writeNewLetter.click();
-        waitForElementIsVisible(addressField);
+
         addressField.sendKeys("com-epam-at2@yandex.ru");
         subjectField.sendKeys("test letter");
         bodyField.sendKeys("test text");
+    }
+
+    public void writeThirdLetter() {
+        addressField.sendKeys("com-epam-at3@yandex.ru");
+        subjectField.sendKeys("test letter");
+        bodyField.sendKeys("test text");
+    }
+    public void saveDraft(){
         close.click();
         saveOk.click();
         DriverManager.getDriver().navigate().refresh();
     }
-
-    public void writeThirdLetter() {
+    public void clickToWriteLetter(){
         waitForElementClickable(writeNewLetter);
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
-        addressField.sendKeys("com-epam-at3@yandex.ru");
-        subjectField.sendKeys("test letter");
-        bodyField.sendKeys("test text");
-        close.click();
-        saveOk.click();
-        DriverManager.getDriver().navigate().refresh();
     }
 
 }
