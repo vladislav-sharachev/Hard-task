@@ -23,14 +23,13 @@ public class NewMailPage extends AbstractPage {
     private WebElement close;
     @FindBy(xpath = "//span[@class='_nb-button-text' and text()='Сохранить и перейти']")
     private WebElement saveOk;
-    @FindBy(css = "a.mail-Logo-Service>svg>rect")
-    private WebElement clickMail;
+
 
     public NewMailPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
     }
 
-    public void writeFirstLetter() throws InterruptedException {
+    public void writeFirstLetter() {
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
         addressField.sendKeys("com-epam-at1@yandex.ru");
@@ -38,11 +37,11 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
-        clickMail.click();
-        Thread.sleep(500);
+        DriverManager.getDriver().navigate().refresh();
     }
 
-    public void writeSecondLetter() throws InterruptedException {
+    public void writeSecondLetter() {
+        waitForElementClickable(writeNewLetter);
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
         addressField.sendKeys("com-epam-at2@yandex.ru");
@@ -50,11 +49,11 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
-        clickMail.click();
-        Thread.sleep(500);
+        DriverManager.getDriver().navigate().refresh();
     }
 
-    public void writeThirdLetter() throws InterruptedException {
+    public void writeThirdLetter() {
+        waitForElementClickable(writeNewLetter);
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
         addressField.sendKeys("com-epam-at3@yandex.ru");
@@ -62,8 +61,7 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
-        clickMail.click();
-        Thread.sleep(500);
+        DriverManager.getDriver().navigate().refresh();
     }
 
 }

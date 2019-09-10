@@ -1,8 +1,10 @@
 package Runner;
 
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import DriverManager.DriverManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -13,8 +15,8 @@ import io.cucumber.junit.CucumberOptions;
 )
 public class CucumberRunner {
 
-/*	@AfterClass
+	@AfterClass
 	public static void teardown() {
 		DriverManager.getDriver().close();
-	}*/
+	}
 }

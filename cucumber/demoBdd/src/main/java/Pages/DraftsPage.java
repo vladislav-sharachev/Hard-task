@@ -34,7 +34,7 @@ public class DraftsPage extends AbstractPage {
         selectDrafts.click();
     }
 
-    public boolean verifyFirstDraft() throws InterruptedException {
+    public boolean verifyFirstDraft() {
         waitForElementIsVisible(verifyFirstDraft);
         return verifyFirstDraft.isDisplayed();
     }
