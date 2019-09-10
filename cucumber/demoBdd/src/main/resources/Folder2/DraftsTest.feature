@@ -12,6 +12,7 @@ Feature: Drafts test
     When I go to drafts
     Then I verify drafts
 
+
   @DeleteDraftsTests
   Scenario: Delete all drafts
     Given I select all drafts

@@ -58,4 +58,9 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
     }
 
+    public void letterWriteAndSave() {
+        letterText();
+        saveDraft();
+    }
+
 }
