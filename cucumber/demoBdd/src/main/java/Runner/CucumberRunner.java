@@ -12,12 +12,12 @@ import DriverManager.DriverManager;
         features = "src/main/resources",
         glue = "StepDefs",
 /*        tags = {"@Regression", "@TestLogin", "not @LoginTest"}*/
-        tags = {"@Regression", "not @WrongLoginTest"}
+        tags = {"@Regression"}
 )
 public class CucumberRunner {
 
-    @AfterClass
+/*    @AfterClass
     public static void teardown() {
         DriverManager.getDriver().close();
-    }
+    }*/
 }

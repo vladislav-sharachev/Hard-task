@@ -48,7 +48,7 @@ public class NewLetterPage extends AbstractPage {
     }
 
     public void clickToWriteLetter() {
-        waitForElementClickable(writeNewLetter);
+        waitForElementToBeClickable(writeNewLetter);
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
     }

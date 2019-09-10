@@ -1,31 +1,17 @@
 package StepDefs;
 
 import io.cucumber.java.en.And;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 
 public class LoginStepDefs extends AbstractStepDefs {
-    @Given("I open main page")
-    public void i_open_main_page() {
-        DriverManager.getDriver().get("https://yandex.ru");
-    }
 
-
-    @When("I check that message visible on main page")
-    public void i_check_that_message_withible_on_main_page() {
-        Assert.assertTrue("Element should be visible",
-                onMainPage().isPleaseLoginMessageVisible());
-    }
-
-    @Then("I click on the login button")
-    public void i_click_on_the_login_button() {
-        onMainPage().clickToEnter();
-    }
-
-    @Given("I fill fields with login (.*)")
+    @And("I fill fields with login (.*)")
     public void i_fill_fields_with_login(String username) {
         onLoginForm().typeUsername(username);
     }
@@ -49,6 +35,17 @@ public class LoginStepDefs extends AbstractStepDefs {
     public void i_check_input() {
         Assert.assertTrue("Element should be visiale",
                 onLoginForm().inputIsSuccessful());
+    }
+
+    @And("I am logging out")
+    public void i_am_logging_out() {
+        onLoginForm().logOut();
+    }
+
+    @AfterClass
+    @And("I check logout")
+    public void i_check_logout() {
+        onMainPage().isPleaseLoginMessageVisible();
     }
 
     @Then("I check an exception")

@@ -12,7 +12,7 @@ public class AbstractPage {
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    protected void waitForElementClickable(WebElement element) {
+    protected void waitForElementToBeClickable(WebElement element) {
         new WebDriverWait(DriverManager.getDriver(), 30)
                 .until(ExpectedConditions.elementToBeClickable(element));
     }

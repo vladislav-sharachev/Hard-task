@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import DriverManager.DriverManager;
@@ -19,8 +20,12 @@ public class LoginPage extends AbstractPage {
     private Button passwordEnter;
     @FindBy(css = "div.mail-User-Name")
     private TextBlock verifyInput;
-    @FindBy(css = "div.passp-form-field__error")
+    @FindBy(xpath = "//div[text()=\"Неверный пароль\"]")
     private TextBlock anException;
+    @FindBy(xpath = "//span[@id='recipient-1']")
+    private WebElement userIcon;
+    @FindBy(xpath = "//a[contains(text(),'Выйти')]")
+    private WebElement logOff;
 
     public LoginPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
@@ -51,5 +56,11 @@ public class LoginPage extends AbstractPage {
     public boolean anExceptionShowed() {
         waitForElementIsVisible(anException.getWrappedElement());
         return anException.isDisplayed();
+    }
+
+    public void logOut() {
+        userIcon.click();
+        waitForElementToBeClickable(logOff);
+        logOff.click();
     }
 }
