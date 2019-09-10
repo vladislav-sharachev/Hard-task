@@ -9,7 +9,7 @@ import ru.yandex.qatools.htmlelements.element.Form;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
-public class NewMailPage extends AbstractPage {
+public class NewLetterPage extends AbstractPage {
 
     @FindBy(xpath = "//a[@title='Написать (w, c)']")
     private Button writeNewLetter;
@@ -25,7 +25,7 @@ public class NewMailPage extends AbstractPage {
     private WebElement saveOk;
 
 
-    public NewMailPage() {
+    public NewLetterPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
     }
 

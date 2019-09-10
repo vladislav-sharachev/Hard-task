@@ -3,12 +3,12 @@ package StepDefs;
 import Pages.DraftsPage;
 import Pages.LoginPage;
 import Pages.MainPage;
-import Pages.NewMailPage;
+import Pages.NewLetterPage;
 
 public abstract class AbstractStepDefs {
     private MainPage mainPage = new MainPage();
     private LoginPage loginPage = new LoginPage();
-    private NewMailPage newMailPage = new NewMailPage();
+    private NewLetterPage newLetterPage = new NewLetterPage();
     private DraftsPage draftsPage = new DraftsPage();
 
     public MainPage onMainPage() {
@@ -19,8 +19,8 @@ public abstract class AbstractStepDefs {
         return loginPage;
     }
 
-    public NewMailPage onNewMailPage() {
-        return newMailPage;
+    public NewLetterPage onNewMailPage() {
+        return newLetterPage;
     }
 
     public DraftsPage onDraftPage() {
