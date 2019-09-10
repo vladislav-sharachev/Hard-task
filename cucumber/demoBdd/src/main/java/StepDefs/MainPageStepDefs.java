@@ -4,10 +4,8 @@ import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 
 public class MainPageStepDefs extends AbstractStepDefs {
-    @BeforeClass
     @Given("I open main page")
     public void i_open_main_page() {
         DriverManager.getDriver().get("https://yandex.ru");

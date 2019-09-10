@@ -38,11 +38,10 @@ public class LoginStepDefs extends AbstractStepDefs {
     }
 
     @And("I am logging out")
-    public void i_am_logging_out() {
+    public void i_am_logging_out() throws InterruptedException {
         onLoginForm().logOut();
     }
 
-    @AfterClass
     @And("I check logout")
     public void i_check_logout() {
         onMainPage().isPleaseLoginMessageVisible();

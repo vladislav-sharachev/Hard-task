@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3400b772-6812-4c18-86c3-1227f45d1a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" afterDir="false" />
+    <list default="true" id="7184899e-1d83-4aad-a3cd-d0743c5352b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Folder1/LoginTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Folder1/LoginTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Folder2/DraftsTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Folder2/DraftsTest.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -36,16 +25,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1QdOuaD52kGwGIfZjpJvSaazDlG" />
+  <component name="ProjectId" id="1Qedb4vJQLxPISaFTVJzIHu2lV5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Vladislav_Sharachev\Awesome\hard-task\cucumber\demoBdd\src\main\resources\Folder2" />
-      <recent name="C:\Users\Vladislav_Sharachev\Awesome\hard-task\cucumber\demoBdd\src\main\resources\Folder1" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,24 +42,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CucumberRunner">
-    <configuration name="Feature: CreateDrafts" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/CreateDrafts.feature" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="demoBdd" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: CreateDrafts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="CucumberRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demoBdd" />
       <extension name="coverage">
@@ -95,7 +61,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CucumberRunner" />
-        <item itemvalue="Cucumber java.Feature: CreateDrafts" />
       </list>
     </recent_temporary>
   </component>
@@ -104,11 +69,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3400b772-6812-4c18-86c3-1227f45d1a65" name="Default Changelist" comment="" />
-      <created>1568097229737</created>
+      <changelist id="7184899e-1d83-4aad-a3cd-d0743c5352b4" name="Default Changelist" comment="" />
+      <created>1568135063165</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568097229737</updated>
+      <updated>1568135063165</updated>
     </task>
     <servers />
   </component>
@@ -117,9 +82,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
