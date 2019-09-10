@@ -1,4 +1,4 @@
-@Regression @TestLogin (order = 10)
+@Regression @TestLogin
 Feature: Login test
 
   Background: cleaning up
@@ -12,11 +12,11 @@ Feature: Login test
 
   @LoginTest
   Scenario Outline: Check that login page opened
-    When I fill fields with login <login>
-    Then I click on the further button
-    When I fill fields with password <password>
-    Then I click on the enter button
-    And I check input
+    Given I fill fields with login <login>
+    When I click on the further button
+    And I fill fields with password <password>
+    And I click on the enter button
+    Then I check input
 
     Examples:
       | login        | password      |
@@ -24,9 +24,9 @@ Feature: Login test
 
   @WrongLoginTest
   Scenario Outline: Check for invalid login
-    When I fill fields with login <login>
-    Then I click on the further button
-    And I check an exception
+    Given I fill fields with login <login>
+    When I click on the further button
+    Then I check an exception
 
     Examples:
       | login         |

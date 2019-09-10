@@ -11,6 +11,7 @@ public class AbstractPage {
         new WebDriverWait(DriverManager.getDriver(), 30)
                 .until(ExpectedConditions.visibilityOf(element));
     }
+
     protected void waitForElementClickable(WebElement element) {
         new WebDriverWait(DriverManager.getDriver(), 30)
                 .until(ExpectedConditions.elementToBeClickable(element));

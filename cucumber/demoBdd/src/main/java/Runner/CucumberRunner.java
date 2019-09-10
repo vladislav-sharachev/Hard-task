@@ -11,7 +11,7 @@ import DriverManager.DriverManager;
 		plugin = "pretty",
 		features = "src/main/resources",
 		glue = "StepDefs",
-		tags = {"@Regression", "not @WrongLoginTest"}
+		tags = {"@Regression", "@TestLogin", "not @LoginTest"}
 )
 public class CucumberRunner {
 

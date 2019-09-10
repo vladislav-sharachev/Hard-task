@@ -1,4 +1,4 @@
-@Regression @TestDraft (order = 20)
+@Regression @TestDraft
 Feature: Drafts test
 
   Background: cleaning up

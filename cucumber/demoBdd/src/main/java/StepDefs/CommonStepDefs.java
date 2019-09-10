@@ -25,49 +25,49 @@ public class CommonStepDefs extends AbstractStepDefs {
         onMainPage().clickToEnter();
     }
 
-    @When("I fill fields with login (.*)")
+    @Given("I fill fields with login (.*)")
     public void i_fill_fields_with_login(String username) {
         onLoginForm().typeUsername(username);
     }
 
-    @Then("I click on the further button")
+    @When("I click on the further button")
     public void i_click_on_the_further_button() {
         onLoginForm().clickToSubmitUserName();
     }
 
-    @When("I fill fields with password (.*)")
+    @And("I fill fields with password (.*)")
     public void i_fill_fields_with_password(String password) {
         onLoginForm().typePassword(password);
     }
 
-    @Then("I click on the enter button")
+    @And("I click on the enter button")
     public void i_click_on_the_enter_button() {
         onLoginForm().clickToSubmitPassword();
     }
 
-    @And("I check input")
+    @Then("I check input")
     public void i_check_input() {
         Assert.assertTrue("Element should be visiale",
                 onLoginForm().inputIsSuccessful());
     }
 
-    @And("I check an exception")
+    @Then("I check an exception")
     public void i_check_an_exception() {
         Assert.assertTrue("Element should be visiale", onLoginForm().anExceptionShowed());
     }
 
     @Given("I write first letter")
-    public void i_write_first_letter() throws InterruptedException {
+    public void i_write_first_letter() {
         onNewMailPage().writeFirstLetter();
     }
 
     @And("I write second letter")
-    public void i_write_second_letter() throws InterruptedException {
+    public void i_write_second_letter() {
         onNewMailPage().writeSecondLetter();
     }
 
     @And("I write third letter")
-    public void i_write_third_letter() throws InterruptedException {
+    public void i_write_third_letter() {
         onNewMailPage().writeThirdLetter();
     }
 
@@ -77,10 +77,10 @@ public class CommonStepDefs extends AbstractStepDefs {
     }
 
     @Then("I verify drafts")
-    public void i_verify_drafts() throws InterruptedException {
-        Assert.assertTrue("Element should be visiale", onDraftPage().verifyFirstDraft());
-        Assert.assertTrue("Element should be visiale", onDraftPage().verifySecondDraft());
-        Assert.assertTrue("Element should be visiale", onDraftPage().verifyThirdDraft());
+    public void i_verify_drafts() {
+        Assert.assertTrue("Element should be visible", onDraftPage().verifyFirstDraft());
+        Assert.assertTrue("Element should be visible", onDraftPage().verifySecondDraft());
+        Assert.assertTrue("Element should be visible", onDraftPage().verifyThirdDraft());
     }
 
     @Given("I select all drafts")
