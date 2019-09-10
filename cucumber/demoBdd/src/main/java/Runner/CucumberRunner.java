@@ -8,16 +8,16 @@ import DriverManager.DriverManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = "pretty",
-		features = "src/main/resources",
-		glue = "StepDefs",
-//		tags = {"@Regression", "@TestLogin", "not @LoginTest"}
-		tags = {"@Regression", "not @WrongLoginTest"}
+        plugin = "pretty",
+        features = "src/main/resources",
+        glue = "StepDefs",
+        tags = {"@Regression", "@TestLogin", "not @LoginTest"}
+//		tags = {"@Regression", "not @WrongLoginTest"}
 )
 public class CucumberRunner {
 
-	@AfterClass
-	public static void teardown() {
-		DriverManager.getDriver().close();
-	}
+    @AfterClass
+    public static void teardown() {
+        DriverManager.getDriver().close();
+    }
 }

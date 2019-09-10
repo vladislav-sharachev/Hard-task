@@ -29,33 +29,33 @@ public class NewMailPage extends AbstractPage {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
     }
 
-    public void writeFirstLetter() {
+    public void firstAdress() {
         addressField.sendKeys("com-epam-at1@yandex.ru");
-        subjectField.sendKeys("test letter");
-        bodyField.sendKeys("test text");
     }
 
-    public void writeSecondLetter() {
-
+    public void secondAdress() {
         addressField.sendKeys("com-epam-at2@yandex.ru");
-        subjectField.sendKeys("test letter");
-        bodyField.sendKeys("test text");
     }
 
-    public void writeThirdLetter() {
+    public void thirdAdress() {
         addressField.sendKeys("com-epam-at3@yandex.ru");
-        subjectField.sendKeys("test letter");
-        bodyField.sendKeys("test text");
     }
-    public void saveDraft(){
+
+    public void saveDraft() {
         close.click();
         saveOk.click();
         DriverManager.getDriver().navigate().refresh();
     }
-    public void clickToWriteLetter(){
+
+    public void clickToWriteLetter() {
         waitForElementClickable(writeNewLetter);
         writeNewLetter.click();
         waitForElementIsVisible(addressField);
+    }
+
+    public void letterText() {
+        subjectField.sendKeys("test letter");
+        bodyField.sendKeys("test text");
     }
 
 }

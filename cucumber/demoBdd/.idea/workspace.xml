@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/NewMailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/NewMailPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/AbstractStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/AbstractStepDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/CommonStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/CommonStepDefs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
