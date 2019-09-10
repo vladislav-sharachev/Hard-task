@@ -2,8 +2,6 @@ package StepDefs;
 
 import io.cucumber.java.en.And;
 import org.junit.Assert;
-import org.yecht.Data;
-
 import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -51,6 +49,53 @@ public class CommonStepDefs extends AbstractStepDefs {
     public void i_check_input() {
         Assert.assertTrue("Element should be visiale",
                 onLoginForm().inputIsSuccessful());
+    }
+
+    @And("I check an exception")
+    public void i_check_an_exception() {
+        Assert.assertTrue("Element should be visiale", onLoginForm().anExceptionShowed());
+    }
+
+    @Given("I write first letter")
+    public void i_write_first_letter() throws InterruptedException {
+        onNewMailPage().writeFirstLetter();
+    }
+
+    @And("I write second letter")
+    public void i_write_second_letter() throws InterruptedException {
+        onNewMailPage().writeSecondLetter();
+    }
+
+    @And("I write third letter")
+    public void i_write_third_letter() throws InterruptedException {
+        onNewMailPage().writeThirdLetter();
+    }
+
+    @When("I go to drafts")
+    public void i_go_to_drafts() {
+        onDraftPage().goToDrafts();
+    }
+
+    @Then("I verify drafts")
+    public void i_verify_drafts() throws InterruptedException {
+        Assert.assertTrue("Element should be visiale", onDraftPage().verifyFirstDraft());
+        Assert.assertTrue("Element should be visiale", onDraftPage().verifySecondDraft());
+        Assert.assertTrue("Element should be visiale", onDraftPage().verifyThirdDraft());
+    }
+
+    @Given("I select all drafts")
+    public void io_select_all_drafts() {
+        onDraftPage().selectAllDrafts();
+    }
+
+    @When("I click to delete the drafts")
+    public void i_click_to_delete_the_drafts() {
+        onDraftPage().deleteAllDrafts();
+    }
+
+    @Then("I check that the drafts were deleted")
+    public void i_check_that_the_drafts_were_deleted() {
+        onDraftPage().verifyTheDraftsWereDeleted();
     }
 
     @Given("I clear cache")

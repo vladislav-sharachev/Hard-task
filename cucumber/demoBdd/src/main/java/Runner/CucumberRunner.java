@@ -1,10 +1,6 @@
 package Runner;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
-import DriverManager.DriverManager;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -13,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = "pretty",
 		features = "src/main/resources",
 		glue = "StepDefs",
-		tags = "@TestLogin"
+		tags = {"@Regression", "not @WrongLoginTest"}
 )
 public class CucumberRunner {
 
