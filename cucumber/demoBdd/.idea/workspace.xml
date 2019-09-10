@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3400b772-6812-4c18-86c3-1227f45d1a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/DraftsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Pages/NewMailPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Folder2/Draftstest.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/AbstractStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/AbstractStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/CommonStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/CommonStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Regression.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoginTests.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/DraftsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/DraftsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/NewMailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/NewMailPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoginTests.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Folder1/LoginTests.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +35,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vladislav_Sharachev\Awesome\hard-task\cucumber\demoBdd\src\main\resources\Folder2" />
+      <recent name="C:\Users\Vladislav_Sharachev\Awesome\hard-task\cucumber\demoBdd\src\main\resources\Folder1" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

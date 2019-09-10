@@ -35,7 +35,7 @@ public class DraftsPage extends AbstractPage {
     }
 
     public boolean verifyFirstDraft() throws InterruptedException {
-        Thread.sleep(500);
+        waitForElementIsVisible(verifyFirstDraft);
         return verifyFirstDraft.isDisplayed();
     }
 

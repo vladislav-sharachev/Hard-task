@@ -1,5 +1,5 @@
-@Regression @TestLogin
-Feature: Sample test
+@Regression @TestLogin (order = 10)
+Feature: Login test
 
   Background: cleaning up
     Given I clear cache
@@ -31,17 +31,3 @@ Feature: Sample test
     Examples:
       | login         |
       | mail-for-bdd1 |
-
-  @DraftsTests
-  Scenario: Create 3 drafts
-    Given I write first letter
-    And I write second letter
-    And I write third letter
-    When I go to drafts
-    Then I verify drafts
-
-  @DeleteDraftsTests
-  Scenario: Delete all drafts
-    Given I select all drafts
-    When I click to delete the drafts
-    Then I check that the drafts were deleted

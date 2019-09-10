@@ -23,6 +23,8 @@ public class NewMailPage extends AbstractPage {
     private WebElement close;
     @FindBy(xpath = "//span[@class='_nb-button-text' and text()='Сохранить и перейти']")
     private WebElement saveOk;
+    @FindBy(css = "a.mail-Logo-Service>svg>rect")
+    private WebElement clickMail;
 
     public NewMailPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
@@ -36,6 +38,7 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
+        clickMail.click();
         Thread.sleep(500);
     }
 
@@ -47,6 +50,7 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
+        clickMail.click();
         Thread.sleep(500);
     }
 
@@ -58,6 +62,7 @@ public class NewMailPage extends AbstractPage {
         bodyField.sendKeys("test text");
         close.click();
         saveOk.click();
+        clickMail.click();
         Thread.sleep(500);
     }
 
