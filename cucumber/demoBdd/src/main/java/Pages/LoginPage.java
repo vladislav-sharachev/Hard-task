@@ -24,11 +24,11 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
     @FindBy(xpath = "//div[text()='mail-for-bdd']")
-    private WebElement oldUser;
+    private WebElement lastUser;
     @FindBy(xpath = "//span[@data-lego='react' and contains(text(),'Удалить')]")
-    private WebElement deleteUser;
+    private WebElement deleteLastUser;
     @FindBy(css = "div.passp-account-list-item-block >a")
-    private WebElement userOldSelect;
+    private WebElement lastUserToSelect;
 
 
     public void typeUsername(String username) {
@@ -65,11 +65,11 @@ public class LoginPage extends AbstractPage {
     }
 
     public void deleteOldUser() {
-        waitForElementIsVisible(oldUser);
-        oldUser.click();
-        waitForElementIsVisible(userOldSelect);
+        waitForElementIsVisible(lastUser);
+        lastUser.click();
+        waitForElementIsVisible(lastUserToSelect);
         Actions actions = new Actions(driver);
-        actions.clickAndHold(deleteUser).build().perform();
-        deleteUser.click();
+        actions.clickAndHold(deleteLastUser).build().perform();
+        deleteLastUser.click();
     }
 }

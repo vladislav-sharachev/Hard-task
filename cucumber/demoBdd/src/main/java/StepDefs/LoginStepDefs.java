@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefs extends AbstractStepDefs {
 
-    @And("I fill fields with login (.*)")
+    @Given("I fill fields with login (.*)")
     public void i_fill_fields_with_login(String username) {
         onLoginForm().typeUsername(username);
     }
