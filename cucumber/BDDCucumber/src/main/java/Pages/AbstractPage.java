@@ -13,7 +13,8 @@ public class AbstractPage {
     protected WebDriver driver = DriverManager.getDriver();
 
     public AbstractPage() {
-        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
+        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager
+                .getDriver())), this);
     }
 
     public void waitForElementIsVisible(WebElement element) {
