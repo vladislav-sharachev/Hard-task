@@ -4,9 +4,14 @@
     <list default="true" id="1df4f5a9-ebbc-4f69-9010-7801ee7bea8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/DraftsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/DraftsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/DraftsStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/DraftsStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/NewLetterlStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/NewLetterlStepDefs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

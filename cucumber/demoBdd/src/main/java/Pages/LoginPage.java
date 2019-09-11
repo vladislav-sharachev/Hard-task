@@ -1,17 +1,11 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import DriverManager.DriverManager;
 import ru.yandex.qatools.htmlelements.element.*;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class LoginPage extends AbstractPage {
-    private static WebDriver driver;
 
     @FindBy(xpath = "//input[contains(@id,'login')]")
     private Form loginField;
@@ -36,9 +30,6 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/ul/li/div/a")
     private WebElement userOldSelect;
 
-    public LoginPage() {
-        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
-    }
 
     public void typeUsername(String username) {
         waitForElementIsVisible(loginField);
@@ -77,9 +68,8 @@ public class LoginPage extends AbstractPage {
         waitForElementIsVisible(oldUser);
         oldUser.click();
         waitForElementIsVisible(userOldSelect);
-        Actions actions = new Actions(DriverManager.getDriver());
-        actions.moveToElement(userOldSelect).build().perform();
-        waitForElementIsVisible(deleteUser);
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(deleteUser).build().perform();
         deleteUser.click();
     }
 }
