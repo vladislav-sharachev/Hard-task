@@ -42,7 +42,6 @@ public class LoginStepDefs extends AbstractStepDefs {
         onLoginForm().logOut();
     }
 
-    @AfterClass
     @And("I check logout")
     public void i_check_logout() {
         onMainPage().isPleaseLoginMessageVisible();
@@ -53,9 +52,8 @@ public class LoginStepDefs extends AbstractStepDefs {
         Assert.assertTrue("Element should be visiale", onLoginForm().anExceptionShowed());
     }
 
-    @Given("I clear cache")
-    public void I_clear_cache() {
-        //todo implement me
+    @Given("I log out of the previous account")
+    public void i_log_out_of_the_previous_account() {
+        onLoginForm().deleteOldUser();
     }
-
 }

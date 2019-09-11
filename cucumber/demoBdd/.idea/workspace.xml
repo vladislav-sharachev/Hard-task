@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3400b772-6812-4c18-86c3-1227f45d1a65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/StepDefs/MainPageStepDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DriverManager/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/AbstractPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/NewLetterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/CucumberRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StepDefs/LoginStepDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Folder1/LoginTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Folder1/LoginTest.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Folder2/DraftsTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Folder2/DraftsTest.feature" afterDir="false" />
@@ -40,6 +35,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

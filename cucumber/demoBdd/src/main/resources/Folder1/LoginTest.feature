@@ -1,9 +1,6 @@
 @Regression @TestLogin
 Feature: Login test
 
-  Background: cleaning up
-    Given I clear cache
-
   @OpenApplication
   Scenario: Check that main page opened
     Given I open main page
@@ -25,15 +22,23 @@ Feature: Login test
       | mail-for-bdd | mail-for-bdd1 |
 
 
+  @DeleteUser
+  Scenario: Deleting old user
+    Given I open main page
+    When I check that message visible on main page
+    Given I click on the login button
+    Given I log out of the previous account
+
+
   @WrongLoginTest
   Scenario Outline: Check for invalid password
     Given I open main page
     When I check that message visible on main page
     Given I click on the login button
-    And I fill fields with password <password>
+    And I fill fields with login <login>
     When I click on the further button
     Then I check an exception
 
     Examples:
-      | password  |
-      | 123456789 |
+      | login          |
+      | hu-hu-hu-go123 |

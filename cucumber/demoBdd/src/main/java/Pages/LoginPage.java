@@ -20,12 +20,16 @@ public class LoginPage extends AbstractPage {
     private Button passwordEnter;
     @FindBy(css = "div.mail-User-Name")
     private TextBlock verifyInput;
-    @FindBy(xpath = "//div[text()=\"Неверный пароль\"]")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/form/div[1]/div[2]")
     private TextBlock anException;
     @FindBy(xpath = "//span[@id='recipient-1']")
     private WebElement userIcon;
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/form/a")
+    private WebElement oldUser;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/ul/li/div/span/span")
+    private WebElement deleteUser;
 
     public LoginPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
@@ -62,5 +66,12 @@ public class LoginPage extends AbstractPage {
         userIcon.click();
         waitForElementToBeClickable(logOff);
         logOff.click();
+    }
+
+    public void deleteOldUser() {
+        waitForElementIsVisible(oldUser);
+        oldUser.click();
+        waitForElementIsVisible(deleteUser);
+        deleteUser.click();
     }
 }
