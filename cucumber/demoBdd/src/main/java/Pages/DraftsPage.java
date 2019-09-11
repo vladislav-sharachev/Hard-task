@@ -21,10 +21,13 @@ public class DraftsPage extends AbstractPage {
     private Button deleteAllDrafts;
     @FindBy(xpath = "//div[text()='В папке «Черновики» нет писем.']")
     private WebElement theDraftsWereDeleted;
+    @FindBy(xpath = "//span[@id='recipient-1']")
+    private WebElement userIcon;
 
 
     public void goToDrafts() {
         selectDrafts.click();
+        waitForElementToBeClickable(userIcon);
         driver.navigate().refresh();
     }
 

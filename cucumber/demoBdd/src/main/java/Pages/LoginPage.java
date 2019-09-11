@@ -27,7 +27,7 @@ public class LoginPage extends AbstractPage {
     private WebElement oldUser;
     @FindBy(xpath = "//span[@data-lego='react' and contains(text(),'Удалить')]")
     private WebElement deleteUser;
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/ul/li/div/a")
+    @FindBy(css = "div.passp-account-list-item-block >a")
     private WebElement userOldSelect;
 
 

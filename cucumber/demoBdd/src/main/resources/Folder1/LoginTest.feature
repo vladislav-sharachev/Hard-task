@@ -1,14 +1,11 @@
 @Regression @TestLogin
 Feature: Login test
 
-  @OpenApplication
-  Scenario: Check that main page opened
-    Given I open main page
-    When I check that message visible on main page
-
   @LoginTest
   Scenario Outline: Check of working login and logout
-    Given I click on the login button
+    Given I open main page
+    And I check that message visible on main page
+    And I click on the login button
     And I fill fields with login <login>
     When I click on the further button
     And I fill fields with password <password>
@@ -26,15 +23,15 @@ Feature: Login test
   Scenario: Deleting old user
     Given I open main page
     When I check that message visible on main page
-    Given I click on the login button
-    Given I log out of the previous account
+    And I click on the login button
+    And I log out of the previous account
 
 
   @WrongLoginTest
   Scenario Outline: Check for invalid password
     Given I open main page
-    When I check that message visible on main page
-    Given I click on the login button
+    And I check that message visible on main page
+    And I click on the login button
     And I fill fields with login <login>
     When I click on the further button
     Then I check an exception
