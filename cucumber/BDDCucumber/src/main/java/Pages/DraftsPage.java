@@ -1,5 +1,6 @@
 package Pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.Button;
@@ -54,5 +55,11 @@ public class DraftsPage extends AbstractPage {
 
     public boolean verifyTheDraftsWereDeleted() {
         return theDraftsWereDeleted.isDisplayed();
+    }
+
+    public void verifyAllDrafts() {
+        Assert.assertTrue("Element should be visible", verifyFirstDraft());
+        Assert.assertTrue("Element should be visible", verifySecondDraft());
+        Assert.assertTrue("Element should be visible", verifyThirdDraft());
     }
 }

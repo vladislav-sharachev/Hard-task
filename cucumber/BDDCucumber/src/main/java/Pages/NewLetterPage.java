@@ -54,5 +54,19 @@ public class NewLetterPage extends AbstractPage {
         letterText();
         saveDraft();
     }
-
+    public void writeFirstLetter() {
+        clickToWriteLetter();
+        firstAdress();
+        letterWriteAndSave();
+    }
+    public void writeSecondLetter() {
+        clickToWriteLetter();
+        secondAdress();
+        letterWriteAndSave();
+    }
+    public void writeThirdLetter() {
+        clickToWriteLetter();
+        thirdAdress();
+        letterWriteAndSave();
+    }
 }
