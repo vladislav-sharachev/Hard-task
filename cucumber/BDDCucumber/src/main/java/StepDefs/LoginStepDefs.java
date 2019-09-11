@@ -28,8 +28,8 @@ public class LoginStepDefs extends AbstractStepDefs {
         onLoginForm().clickToSubmitPassword();
     }
 
-    @Then("I check input")
-    public void i_check_input() {
+    @Then("I check successful log in")
+    public void i_check_successful_log_in() {
         Assert.assertTrue("Element should be visiale",
                 onLoginForm().inputIsSuccessful());
     }

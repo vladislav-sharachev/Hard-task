@@ -5,8 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class DraftsStepDefs extends AbstractStepDefs {
-    @Given("I select all drafts")
-    public void io_select_all_drafts() {
+    @Given("I select all the drafts")
+    public void io_select_all_the_drafts() {
         onDraftPage().selectAllDrafts();
     }
 

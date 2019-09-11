@@ -12,7 +12,7 @@ Feature: Login test
     When I click on the further button
     And I fill fields with password <password>
     And I click on the enter button
-    And I check input
+    And I check successful log in
     And I am logging out
     Then I check logout
     And I open main page

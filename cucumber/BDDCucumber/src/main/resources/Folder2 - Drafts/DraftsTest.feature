@@ -10,12 +10,12 @@ Feature: Drafts test
     And I click on the further button
     And I fill fields with password <password>
     And I click on the enter button
-    And I check input
-    When I write first letter
-    And I write second letter
-    And I write third letter
+    And I check successful log in
+    When I write a first letter
+    And I write a second letter
+    And I write a third letter
     And I go to drafts
-    Then I verify drafts
+    Then I verify the drafts
 
     Examples:
       | login        | password      |
@@ -24,6 +24,6 @@ Feature: Drafts test
 
   @DeleteDraftsTests
   Scenario: Delete all drafts
-    Given I select all drafts
+    Given I select all the drafts
     When I click to delete the drafts
     Then I check that the drafts were deleted
