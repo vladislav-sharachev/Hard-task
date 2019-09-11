@@ -1,6 +1,8 @@
 package Pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import DriverManager.DriverManager;
@@ -9,6 +11,7 @@ import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class LoginPage extends AbstractPage {
+    private static WebDriver driver;
 
     @FindBy(xpath = "//input[contains(@id,'login')]")
     private Form loginField;
@@ -20,16 +23,18 @@ public class LoginPage extends AbstractPage {
     private Button passwordEnter;
     @FindBy(css = "div.mail-User-Name")
     private TextBlock verifyInput;
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/div[1]/form/div[1]/div[2]")
+    @FindBy(xpath = "//div[text()='Такого аккаунта нет']")
     private TextBlock anException;
     @FindBy(xpath = "//span[@id='recipient-1']")
     private WebElement userIcon;
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/form/a")
+    @FindBy(xpath = "//div[text()='mail-for-bdd']")
     private WebElement oldUser;
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/ul/li/div/span/span")
+    @FindBy(xpath = "//span[@data-lego='react' and contains(text(),'Удалить')]")
     private WebElement deleteUser;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/div[3]/div[2]/div/div/ul/li/div/a")
+    private WebElement userOldSelect;
 
     public LoginPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
@@ -71,6 +76,9 @@ public class LoginPage extends AbstractPage {
     public void deleteOldUser() {
         waitForElementIsVisible(oldUser);
         oldUser.click();
+        waitForElementIsVisible(userOldSelect);
+        Actions actions = new Actions(DriverManager.getDriver());
+        actions.moveToElement(userOldSelect).build().perform();
         waitForElementIsVisible(deleteUser);
         deleteUser.click();
     }

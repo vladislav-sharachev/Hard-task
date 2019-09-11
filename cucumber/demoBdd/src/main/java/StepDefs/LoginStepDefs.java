@@ -1,13 +1,10 @@
 package StepDefs;
 
 import io.cucumber.java.en.And;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
 public class LoginStepDefs extends AbstractStepDefs {
 
@@ -38,7 +35,7 @@ public class LoginStepDefs extends AbstractStepDefs {
     }
 
     @And("I am logging out")
-    public void i_am_logging_out() throws InterruptedException {
+    public void i_am_logging_out() {
         onLoginForm().logOut();
     }
 
