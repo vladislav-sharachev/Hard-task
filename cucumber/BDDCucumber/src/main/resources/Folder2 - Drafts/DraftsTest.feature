@@ -23,7 +23,7 @@ Feature: Drafts test
 
 
   @DeleteDraftsTests
-  Scenario: Delete all drafts
+  Scenario: Delete all the drafts
     Given I select all the drafts
     When I click to delete the drafts
     Then I check that the drafts were deleted
