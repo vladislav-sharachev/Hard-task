@@ -1,8 +1,8 @@
 @Regression @TestDraft
 Feature: Drafts test
 
-  @Login
-  Scenario Outline: Login to account
+  @DraftsTests
+  Scenario Outline: Create 3 drafts
     Given I open main page
     And I check that message visible on main page
     And I click on the login button
@@ -10,19 +10,16 @@ Feature: Drafts test
     And I click on the further button
     And I fill fields with password <password>
     And I click on the enter button
-    Then I check input
+    And I check input
+    When I write first letter
+    And I write second letter
+    And I write third letter
+    And I go to drafts
+    Then I verify drafts
 
     Examples:
       | login        | password      |
       | mail-for-bdd | mail-for-bdd1 |
-
-  @DraftsTests
-  Scenario: Create 3 drafts
-    Given I write first letter
-    And I write second letter
-    And I write third letter
-    When I go to drafts
-    Then I verify drafts
 
 
   @DeleteDraftsTests

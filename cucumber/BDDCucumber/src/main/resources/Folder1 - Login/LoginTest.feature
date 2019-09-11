@@ -4,7 +4,7 @@ Feature: Login test
   Background: Opening main page
     Given I open main page
     When I check that message visible on main page
-    Then I click on the login button
+    And I click on the login button
 
   @LoginTest
   Scenario Outline: Check of working login and logout
@@ -12,9 +12,9 @@ Feature: Login test
     When I click on the further button
     And I fill fields with password <password>
     And I click on the enter button
-    Then I check input
+    And I check input
     And I am logging out
-    And I check logout
+    Then I check logout
     And I open main page
     And I check that message visible on main page
     And I click on the login button
