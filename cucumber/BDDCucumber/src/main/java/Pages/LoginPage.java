@@ -20,11 +20,11 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//div[text()='Такого аккаунта нет']")
     private TextBlock anException;
     @FindBy(xpath = "//span[@id='recipient-1']")
-    private WebElement userIcon;
+    private HtmlElement userIcon;
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
-    private WebElement logOff;
+    private Button logOff;
     @FindBy(xpath = "//div[text()='mail-for-bdd']")
-    private WebElement lastUser;
+    private TextBlock lastUser;
     @FindBy(xpath = "//span[@data-lego='react' and contains(text(),'Удалить')]")
     private WebElement deleteLastUser;
     @FindBy(css = "div.passp-account-list-item-block >a")

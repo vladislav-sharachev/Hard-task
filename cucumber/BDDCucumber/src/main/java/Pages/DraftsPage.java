@@ -3,27 +3,27 @@ package Pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.htmlelements.element.Button;
-import ru.yandex.qatools.htmlelements.element.CheckBox;
+import org.w3c.dom.Text;
+import ru.yandex.qatools.htmlelements.element.*;
 
 public class DraftsPage extends AbstractPage {
 
     @FindBy(xpath = "//span[text()='Черновики']")
-    private WebElement selectDrafts;
+    private CheckBox selectDrafts;
     @FindBy(xpath = "//span[text()='com-epam-at1@yandex.ru']")
-    private WebElement verifyFirstDraft;
+    private TextBlock verifyFirstDraft;
     @FindBy(xpath = "//span[text()='com-epam-at2@yandex.ru']")
-    private WebElement verifySecondDraft;
+    private TextBlock verifySecondDraft;
     @FindBy(xpath = "//span[text()='com-epam-at3@yandex.ru']")
-    private WebElement verifyThirdDraft;
+    private TextBlock verifyThirdDraft;
     @FindBy(xpath = "//div[contains(@class,'main-select')]/label[contains(@class,'Checkbox')]")
     private CheckBox selectAllDrafts;
     @FindBy(xpath = "//div[@title='Удалить (Delete)']")
     private Button deleteAllDrafts;
     @FindBy(xpath = "//div[text()='В папке «Черновики» нет писем.']")
-    private WebElement theDraftsWereDeleted;
+    private TextBlock theDraftsWereDeleted;
     @FindBy(xpath = "//span[@id='recipient-1']")
-    private WebElement userIcon;
+    private HtmlElement userIcon;
 
 
     public void goToDrafts() {

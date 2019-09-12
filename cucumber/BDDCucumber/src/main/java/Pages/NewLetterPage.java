@@ -16,9 +16,9 @@ public class NewLetterPage extends AbstractPage {
     @FindBy(css = "div.cke_wysiwyg_div")
     private Form bodyField;
     @FindBy(xpath = "//div[contains(@class,'cancel') and @title='Закрыть']")
-    private WebElement close;
+    private Button close;
     @FindBy(xpath = "//span[@class='_nb-button-text' and text()='Сохранить и перейти']")
-    private WebElement saveOk;
+    private Button saveOk;
 
 
     public void firstAdress() {
