@@ -2,6 +2,7 @@ package StepDefs;
 
 import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
@@ -18,7 +19,7 @@ public class MainPageStepDefs extends AbstractStepDefs {
                 onMainPage().isPleaseLoginMessageVisible());
     }
 
-    @Given("I click on the login button")
+    @Then("I click on the login button")
     public void i_click_on_the_login_button() {
         onMainPage().clickToEnter();
     }

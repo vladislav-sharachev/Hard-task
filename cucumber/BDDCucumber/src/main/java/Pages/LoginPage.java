@@ -1,12 +1,9 @@
 package Pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import DriverManager.DriverManager;
 import ru.yandex.qatools.htmlelements.element.*;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class LoginPage extends AbstractPage {
 
@@ -20,16 +17,19 @@ public class LoginPage extends AbstractPage {
     private Button passwordEnter;
     @FindBy(css = "div.mail-User-Name")
     private TextBlock verifyInput;
-    @FindBy(xpath = "//div[text()=\"Неверный пароль\"]")
+    @FindBy(xpath = "//div[text()='Такого аккаунта нет']")
     private TextBlock anException;
     @FindBy(xpath = "//span[@id='recipient-1']")
     private WebElement userIcon;
     @FindBy(xpath = "//a[contains(text(),'Выйти')]")
     private WebElement logOff;
+    @FindBy(xpath = "//div[text()='mail-for-bdd']")
+    private WebElement lastUser;
+    @FindBy(xpath = "//span[@data-lego='react' and contains(text(),'Удалить')]")
+    private WebElement deleteLastUser;
+    @FindBy(css = "div.passp-account-list-item-block >a")
+    private WebElement lastUserToSelect;
 
-    public LoginPage() {
-        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
-    }
 
     public void typeUsername(String username) {
         waitForElementIsVisible(loginField);
@@ -62,5 +62,14 @@ public class LoginPage extends AbstractPage {
         userIcon.click();
         waitForElementToBeClickable(logOff);
         logOff.click();
+    }
+
+    public void deleteOldUser() {
+        waitForElementIsVisible(lastUser);
+        lastUser.click();
+        waitForElementIsVisible(lastUserToSelect);
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(deleteLastUser).build().perform();
+        deleteLastUser.click();
     }
 }

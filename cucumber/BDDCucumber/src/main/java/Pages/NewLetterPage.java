@@ -1,13 +1,9 @@
 package Pages;
 
-import DriverManager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.Form;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class NewLetterPage extends AbstractPage {
 
@@ -25,10 +21,6 @@ public class NewLetterPage extends AbstractPage {
     private WebElement saveOk;
 
 
-    public NewLetterPage() {
-        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
-    }
-
     public void firstAdress() {
         addressField.sendKeys("com-epam-at1@yandex.ru");
     }
@@ -44,7 +36,7 @@ public class NewLetterPage extends AbstractPage {
     public void saveDraft() {
         close.click();
         saveOk.click();
-        DriverManager.getDriver().navigate().refresh();
+        driver.navigate().refresh();
     }
 
     public void clickToWriteLetter() {
@@ -62,5 +54,19 @@ public class NewLetterPage extends AbstractPage {
         letterText();
         saveDraft();
     }
-
+    public void writeFirstLetter() {
+        clickToWriteLetter();
+        firstAdress();
+        letterWriteAndSave();
+    }
+    public void writeSecondLetter() {
+        clickToWriteLetter();
+        secondAdress();
+        letterWriteAndSave();
+    }
+    public void writeThirdLetter() {
+        clickToWriteLetter();
+        thirdAdress();
+        letterWriteAndSave();
+    }
 }

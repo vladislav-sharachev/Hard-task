@@ -1,13 +1,10 @@
 package Pages;
 
-import DriverManager.DriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.CheckBox;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 public class DraftsPage extends AbstractPage {
 
@@ -25,13 +22,14 @@ public class DraftsPage extends AbstractPage {
     private Button deleteAllDrafts;
     @FindBy(xpath = "//div[text()='В папке «Черновики» нет писем.']")
     private WebElement theDraftsWereDeleted;
+    @FindBy(xpath = "//span[@id='recipient-1']")
+    private WebElement userIcon;
 
-    public DraftsPage() {
-        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager.getDriver())), this);
-    }
 
     public void goToDrafts() {
         selectDrafts.click();
+        waitForElementToBeClickable(userIcon);
+        driver.navigate().refresh();
     }
 
     public boolean verifyFirstDraft() {
@@ -57,5 +55,11 @@ public class DraftsPage extends AbstractPage {
 
     public boolean verifyTheDraftsWereDeleted() {
         return theDraftsWereDeleted.isDisplayed();
+    }
+
+    public void verifyAllDrafts() {
+        Assert.assertTrue("Element should be visible", verifyFirstDraft());
+        Assert.assertTrue("Element should be visible", verifySecondDraft());
+        Assert.assertTrue("Element should be visible", verifyThirdDraft());
     }
 }

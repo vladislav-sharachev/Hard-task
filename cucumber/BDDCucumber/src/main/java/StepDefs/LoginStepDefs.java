@@ -1,17 +1,14 @@
 package StepDefs;
 
 import io.cucumber.java.en.And;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import DriverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
 public class LoginStepDefs extends AbstractStepDefs {
 
-    @And("I fill fields with login (.*)")
+    @Given("I fill fields with login (.*)")
     public void i_fill_fields_with_login(String username) {
         onLoginForm().typeUsername(username);
     }
@@ -31,14 +28,14 @@ public class LoginStepDefs extends AbstractStepDefs {
         onLoginForm().clickToSubmitPassword();
     }
 
-    @Then("I check input")
-    public void i_check_input() {
+    @Then("I check successful log in")
+    public void i_check_successful_log_in() {
         Assert.assertTrue("Element should be visiale",
                 onLoginForm().inputIsSuccessful());
     }
 
     @And("I am logging out")
-    public void i_am_logging_out() throws InterruptedException {
+    public void i_am_logging_out() {
         onLoginForm().logOut();
     }
 
@@ -52,9 +49,8 @@ public class LoginStepDefs extends AbstractStepDefs {
         Assert.assertTrue("Element should be visiale", onLoginForm().anExceptionShowed());
     }
 
-    @Given("I clear cache")
-    public void I_clear_cache() {
-        //todo implement me
+    @Given("I log out of the previous account")
+    public void i_log_out_of_the_previous_account() {
+        onLoginForm().deleteOldUser();
     }
-
 }
