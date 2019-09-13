@@ -12,7 +12,6 @@ public class MainPageStepDefs extends AbstractStepDefs {
         DriverManager.getDriver().get("https://yandex.ru");
     }
 
-
     @When("I check that message visible on main page")
     public void i_check_that_message_withible_on_main_page() {
         Assert.assertTrue("Element should be visible",

@@ -5,25 +5,25 @@ import Pages.LoginPage;
 import Pages.MainPage;
 import Pages.NewLetterPage;
 
-public abstract class AbstractStepDefs {
+abstract class AbstractStepDefs {
     private MainPage mainPage = new MainPage();
     private LoginPage loginPage = new LoginPage();
     private NewLetterPage newLetterPage = new NewLetterPage();
     private DraftsPage draftsPage = new DraftsPage();
 
-    public MainPage onMainPage() {
+    protected MainPage onMainPage() {
         return mainPage;
     }
 
-    public LoginPage onLoginForm() {
+    protected LoginPage onLoginForm() {
         return loginPage;
     }
 
-    public NewLetterPage onNewMailPage() {
+    protected NewLetterPage onNewMailPage() {
         return newLetterPage;
     }
 
-    public DraftsPage onDraftPage() {
+    protected DraftsPage onDraftPage() {
         return draftsPage;
     }
 }

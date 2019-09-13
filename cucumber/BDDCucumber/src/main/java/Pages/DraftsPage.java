@@ -1,9 +1,7 @@
 package Pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.w3c.dom.Text;
 import ru.yandex.qatools.htmlelements.element.*;
 
 public class DraftsPage extends AbstractPage {
@@ -25,23 +23,22 @@ public class DraftsPage extends AbstractPage {
     @FindBy(xpath = "//span[@id='recipient-1']")
     private HtmlElement userIcon;
 
-
     public void goToDrafts() {
         selectDrafts.click();
         waitForElementToBeClickable(userIcon);
         driver.navigate().refresh();
     }
 
-    public boolean verifyFirstDraft() {
+    private boolean verifyFirstDraft() {
         waitForElementIsVisible(verifyFirstDraft);
         return verifyFirstDraft.isDisplayed();
     }
 
-    public boolean verifySecondDraft() {
+    private boolean verifySecondDraft() {
         return verifySecondDraft.isDisplayed();
     }
 
-    public boolean verifyThirdDraft() {
+    private boolean verifyThirdDraft() {
         return verifyThirdDraft.isDisplayed();
     }
 

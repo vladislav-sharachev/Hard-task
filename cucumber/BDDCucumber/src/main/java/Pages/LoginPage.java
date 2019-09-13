@@ -69,7 +69,7 @@ public class LoginPage extends AbstractPage {
         lastUser.click();
         waitForElementIsVisible(lastUserToSelect);
         Actions actions = new Actions(driver);
-        actions.clickAndHold(deleteLastUser).build().perform();
+        actions.moveToElement(lastUserToSelect).moveToElement(deleteLastUser).clickAndHold(deleteLastUser).build().perform();
         deleteLastUser.click();
     }
 }

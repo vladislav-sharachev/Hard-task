@@ -9,15 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
-public class AbstractPage {
+abstract class AbstractPage {
     protected WebDriver driver = DriverManager.getDriver();
 
-    public AbstractPage() {
+    protected AbstractPage() {
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(DriverManager
                 .getDriver())), this);
     }
 
-    public void waitForElementIsVisible(WebElement element) {
+    protected void waitForElementIsVisible(WebElement element) {
         new WebDriverWait(DriverManager.getDriver(), 30)
                 .until(ExpectedConditions.visibilityOf(element));
     }
