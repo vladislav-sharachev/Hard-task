@@ -1,7 +1,0 @@
-package com.epam.vladislav_sharachev.java.lesson7.task1;
-
-public class SimpleService {
-    public void  initService() {
-
-    }
-}
