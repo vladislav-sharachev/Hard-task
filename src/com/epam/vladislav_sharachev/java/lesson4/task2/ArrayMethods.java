@@ -3,7 +3,6 @@ package com.epam.vladislav_sharachev.java.lesson4.task2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class ArrayMethods<Integer> {
 

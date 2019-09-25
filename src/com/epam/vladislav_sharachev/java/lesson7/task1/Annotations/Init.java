@@ -6,5 +6,6 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD) //только метод
 @Retention(RetentionPolicy.RUNTIME) //
 public @interface Init {
+    String thisVoid() default "Yes";
     boolean suppressException() default false;
 }
