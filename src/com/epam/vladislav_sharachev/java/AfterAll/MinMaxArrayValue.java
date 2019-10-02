@@ -8,7 +8,9 @@ public class MinMaxArrayValue {
         int max = 0;
         for (int maxValue : array) { // ищем самое последнее число
             max = maxValue;
+            System.out.print("[" + max + "] ");
         }
+        System.out.println();
         System.out.println("Наибольшое число массива: " + max);
     }
 
@@ -24,6 +26,12 @@ public class MinMaxArrayValue {
 
     public static void main(String[] args) {
         int[] array = new int[]{2, 7, 4, 3, 50, 2};
+        System.out.println("Первоначальный массив: ");
+        for (int allValue : array) {
+            System.out.print("[" + allValue + "] ");
+        }
+        System.out.println();
+        System.out.println("Отсортированный массив: ");
         Arrays.sort(array); // сортируем массиив
         findMax(array); // метод ищущий наибольший элемент (последний в списке)
         findMin(array); //метод сравнивает все элементы с самым первым
