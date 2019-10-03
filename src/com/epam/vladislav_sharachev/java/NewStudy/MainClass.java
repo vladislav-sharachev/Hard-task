@@ -10,7 +10,7 @@ public class MainClass {
         int[] array = new int[]{2, 7, 4, 3, 50, 2};
 
         logicClass.firstArrayMessage(array);
-        sort.bubbleSort(array);
+        sort.choiceSort(array);
         logicClass.findMax(array); // метод ищущий наибольший элемент (последний в списке)
         logicClass.findMin(array); //метод сравнивает все элементы с самым первым
     }
