@@ -4,9 +4,7 @@ import com.epam.vladislav_sharachev.java.NewStudy.Sort.Sort;
 
 public class ClassForLogic {
 
-    int[] array = new int[]{2, 7, 4, 3, 50, 2};
-
-    public void firstArrayMessage() {
+    public void firstArrayMessage(int[] array) {
         System.out.println("Первоначальный массив: ");
         for (int allValue : array) {
             System.out.print("[" + allValue + "] ");
