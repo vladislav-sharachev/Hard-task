@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e56f33fe-b985-42b3-98e9-e95e50fb6558" name="Default Changelist" comment="" />
+    <list default="true" id="aacbaea2-c65f-439c-a84d-8f04f3447937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AT_lab/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AT_lab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AT_lab/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AT_lab/AT_Framework/AT_Framework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AT_lab/AT_lab.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1QGxvJoE3NqROes43gAvLEeBvq5" />
+  <component name="ProjectId" id="1YJIb9bvHIHs1Fajo1crotIwrCA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,9 +38,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Vladislav_Sharachev/IdeaProjects/ATtests/Tests/testNG.xml">
+  <component name="RunManager">
     <configuration name="AllTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Tests" />
+      <module name="WebServicesTesting" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.epam.vladislav_sharachev.tests.*" />
@@ -46,19 +56,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/Vladislav_Sharachev/IdeaProjects/ATtests/Tests/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Tests" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/Tests/testNG.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/Vladislav_Sharachev/IdeaProjects/ATtests/Tests/testNG.xml" />
         <item itemvalue="TestNG.AllTests" />
       </list>
     </recent_temporary>
@@ -68,12 +67,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e56f33fe-b985-42b3-98e9-e95e50fb6558" name="Default Changelist" comment="" />
-      <created>1567410963757</created>
+      <changelist id="aacbaea2-c65f-439c-a84d-8f04f3447937" name="Default Changelist" comment="" />
+      <created>1582654338065</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567410963757</updated>
+      <updated>1582654338065</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

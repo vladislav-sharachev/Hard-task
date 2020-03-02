@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="940c405a-6238-4245-b9a6-bc6bf057f1de" name="Default Changelist" comment="" />
+    <list default="true" id="1e2c59db-140e-4639-988e-5ba2ae213fe1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AT_Framework/AT_Framework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AT_lab.iml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="downloadSourcesAutomatically" value="true" />
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1QNbmpKQgHuqvEbxEfi2TRBMgTb" />
+  <component name="ProjectId" id="1S4J294UWz7gFKlEbqibaT5X5Jq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,70 +41,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.MailTest">
-    <configuration name="C:/Users/1/IdeaProjects/AT_lab/AT_Framework/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AT_Framework" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/AT_Framework/testNG.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InvalidLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AT_Framework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.atm.Framework.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.atm.Framework.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.atm.Framework.tests.InvalidLoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MailTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AT_Framework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.atm.Framework.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.atm.Framework.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.atm.Framework.tests.MailTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="TestNG.MailTest" />
-        <item itemvalue="TestNG.InvalidLoginTest" />
-        <item itemvalue="TestNG.C:/Users/1/IdeaProjects/AT_lab/AT_Framework/testNG.xml" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="940c405a-6238-4245-b9a6-bc6bf057f1de" name="Default Changelist" comment="" />
-      <created>1567614162744</created>
+      <changelist id="1e2c59db-140e-4639-988e-5ba2ae213fe1" name="Default Changelist" comment="" />
+      <created>1570816725016</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567614162744</updated>
+      <updated>1570816725016</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,0 +1,44 @@
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.engine.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.exe
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.deps.json
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.runtimeconfig.json
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.runtimeconfig.dev.json
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.pdb
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\OpenQA.Selenium.Winium.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\WebDriver.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.AssemblyInfoInputs.cache
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.AssemblyInfo.cs
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.csproj.CopyComplete
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.dll
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.pdb
+C:\Users\Vladislav_Sharachev\C# learn\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.csprojAssemblyReference.cache
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.csprojAssemblyReference.cache
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.AssemblyInfoInputs.cache
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.AssemblyInfo.cs
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.pdb
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.engine.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.exe
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.deps.json
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.runtimeconfig.json
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.runtimeconfig.dev.json
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\CalcCheck.pdb
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\OpenQA.Selenium.Winium.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\WebDriver.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\MyJava\Calc\CalcCheck\CalcCheck\obj\Debug\netcoreapp3.1\CalcCheck.csproj.CopyComplete
