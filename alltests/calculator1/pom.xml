@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>calculator1</artifactId>
     <properties>
-        <juinit.version>4.12</juinit.version>
+        <juinit.version>4.13.1</juinit.version>
     </properties>
     <dependencies>
         <dependency>
